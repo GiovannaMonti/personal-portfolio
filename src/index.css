@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: "GopherDisplay-Medium";
   src: local("GopherDisplay-Medium"),
@@ -13,6 +17,11 @@
 @font-face {
   font-family: "TTC";
   src: local("TTC"), url(./fonts/TTC.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "TTC-DemiBold";
+  src: local("TTC-DemiBold"), url(./fonts/TTC-DemiBold.otf) format("opentype");
 }
 
 /* create react app defaults */
@@ -55,6 +64,11 @@ ul {
   margin: 0;
   padding: 0;
   font-weight: normal;
+}
+
+body {
+  background-color: #111111;
+  color: white;
 }
 
 ol,

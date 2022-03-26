@@ -7,12 +7,12 @@ export const MENU_MOBILE_STYLES = {
     top: "30px",
   },
   bmBurgerBars: {
-    background: "#373a47",
+    background: "white",
     height: "10%",
     borderRadius: "10px",
   },
   bmBurgerBarsHover: {
-    background: "#a90000",
+    background: "white",
   },
   bmCrossButton: {
     height: "30px",
@@ -21,7 +21,7 @@ export const MENU_MOBILE_STYLES = {
     right: "30px",
   },
   bmCross: {
-    background: "#bdc3c7",
+    background: "white",
     width: "2px",
     height: "30px",
     top: "-5px",
@@ -33,8 +33,8 @@ export const MENU_MOBILE_STYLES = {
   },
   bmMenu: {
     overflow: "hidden",
-    background: "#373a47",
-    padding: "0",
+    background: "#111111",
+    padding: "0 2rem",
   },
   bmMorphShape: {
     fill: "#373a47",
@@ -44,10 +44,10 @@ export const MENU_MOBILE_STYLES = {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    color: "#b8b7ad",
+    color: "white",
   },
   bmItem: {
-    display: "inline-block",
+    display: "flex",
   },
   bmOverlay: {
     background: "rgba(0, 0, 0, 0.3)",
