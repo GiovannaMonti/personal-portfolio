@@ -8,7 +8,7 @@ export const MENU_MOBILE_STYLES = {
   },
   bmBurgerBars: {
     background: "white",
-    height: "10%",
+    height: "2px",
     borderRadius: "10px",
   },
   bmBurgerBarsHover: {
