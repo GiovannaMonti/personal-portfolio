@@ -71,9 +71,27 @@ export const MenuMobile = ({ location }) => {
             download CV
           </a>
           <div className="social flex flex-col gap-y-3">
-            <LinkedinIcon />
-            <GithubIcon />
-            <BehanceIcon />
+            <a
+              href="https://www.linkedin.com/in/giovanna-monti-0637351a4/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <LinkedinIcon />
+            </a>
+            <a
+              href="https://github.com/GiovannaMonti"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <GithubIcon />
+            </a>
+            <a
+              href="https://www.behance.net/giovannamontidev"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <BehanceIcon />
+            </a>
           </div>
         </div>
       </Menu>
