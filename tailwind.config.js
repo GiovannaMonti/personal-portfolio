@@ -26,6 +26,9 @@ module.exports = {
       pSm: "18px",
       linkMd: "30px",
     },
+    colors: {
+      darkBlack: "#111111",
+    },
   },
   plugins: [],
 }

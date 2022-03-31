@@ -6,6 +6,7 @@ import { App } from "./components/App"
 import { Projects } from "./components/Projects"
 import { Experience } from "./components/Experience"
 import { About } from "./components/About"
+import { Home } from "./components/Home"
 
 import { ROUTES } from "./constants/routes"
 import "./index.css"
@@ -13,10 +14,12 @@ import "./index.css"
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
-      <Route path={ROUTES.default} element={<App />} />
-      <Route path={ROUTES.projects} element={<Projects />} />
-      <Route path={ROUTES.experience} element={<Experience />} />
-      <Route path={ROUTES.about} element={<About />} />
+      <Route path={ROUTES.default} element={<App />}>
+        <Route path={ROUTES.home} element={<Home />} />
+        <Route path={ROUTES.projects} element={<Projects />} />
+        <Route path={ROUTES.experience} element={<Experience />} />
+        <Route path={ROUTES.about} element={<About />} />
+      </Route>
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")
