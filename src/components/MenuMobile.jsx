@@ -1,103 +1,82 @@
 import React, { useState } from "react"
-import { push as Menu } from "react-burger-menu"
+import { slide as Menu } from "react-burger-menu"
 import { Link } from "react-router-dom"
-import { RoughNotation } from "react-rough-notation"
+
+import { MenuLink } from "./MenuLink.jsx"
+import { ReactComponent as CustomHamburgerIcon } from "../assets/icon-menu.svg"
+import { ReactComponent as CustomCrossIcon } from "../assets/icon-x.svg"
+import { ReactComponent as LogoMobile } from "../assets/logo-mobile.svg"
+import { ReactComponent as LogoMobileGreen } from "../assets/logo-mobile-green.svg"
+import { ReactComponent as LinkedinIcon } from "../assets/linkedin.svg"
+import { ReactComponent as BehanceIcon } from "../assets/behance.svg"
+import { ReactComponent as GithubIcon } from "../assets/github.svg"
+import { ReactComponent as DonwloadIcon } from "../assets/icon-download.svg"
 
 import { MENU_MOBILE_STYLES } from "../styles/MenuMobileStyles.js"
 
-export const MenuMobile = () => {
-  const [menuItemId, setMenuItemId] = useState(null)
+export const MenuMobile = ({ location }) => {
+  const [hoveredItemId, setHoveredItemId] = useState(null)
+  const [isOpenMenu, setIsOpenMenu] = useState(false)
+
+  function toggleMenu() {
+    setIsOpenMenu(!isOpenMenu)
+  }
   return (
-    <Menu right width="100%" styles={MENU_MOBILE_STYLES}>
-      <div className="routes text-title3 flex flex-col items-center gap-y-3">
-        <RoughNotation
-          type="circle"
-          show={menuItemId === "home"}
-          padding={[10, 20, 10, 20]}
-          strokeWidth={4}
-          iterations={1}
-          color="#4BFFB3"
-          animationDuration={500}
-          onMouseOver={() => {
-            setMenuItemId("home")
-          }}
-          onMouseOut={() => {
-            setMenuItemId(null)
-          }}
-        >
-          <Link className="font-display" to="/">
-            Home
-          </Link>
-        </RoughNotation>
-        <RoughNotation
-          type="circle"
-          show={menuItemId === "projects"}
-          padding={[10, 20, 10, 20]}
-          strokeWidth={4}
-          iterations={1}
-          color="#4BFFB3"
-          animationDuration={500}
-          onMouseOver={() => {
-            setMenuItemId("projects")
-          }}
-          onMouseOut={() => {
-            setMenuItemId(null)
-          }}
-        >
-          <Link className="font-display" to="/projects">
-            Projects
-          </Link>
-        </RoughNotation>
-        <RoughNotation
-          type="circle"
-          show={menuItemId === "experience"}
-          padding={[10, 20, 10, 20]}
-          strokeWidth={4}
-          iterations={1}
-          color="#4BFFB3"
-          animationDuration={500}
-          onMouseOver={() => {
-            setMenuItemId("experience")
-          }}
-          onMouseOut={() => {
-            setMenuItemId(null)
-          }}
-        >
-          <Link className="font-display" to="/enxperience">
-            Experience
-          </Link>
-        </RoughNotation>
-        <RoughNotation
-          type="circle"
-          show={menuItemId === "about"}
-          padding={[10, 20, 10, 20]}
-          strokeWidth={4}
-          iterations={1}
-          color="#4BFFB3"
-          animationDuration={500}
-          onMouseOver={() => {
-            setMenuItemId("about")
-          }}
-          onMouseOut={() => {
-            setMenuItemId(null)
-          }}
-        >
-          <Link className="font-display" to="/about">
-            About
-          </Link>
-        </RoughNotation>
+    <>
+      <div className="menu-bar fixed bg-darkBlack top-0 w-full flex justify-between items-center py-6 px-10">
+        <Link to="/home">
+          {location.pathname === "/home" ? <LogoMobileGreen /> : <LogoMobile />}
+        </Link>
+        <span className="menu-icon cursor-pointer" onClick={() => toggleMenu()}>
+          <CustomHamburgerIcon />
+        </span>
       </div>
 
-      <div className="menu-footer absolute bottom-0 left-0 w-full flex items-end justify-between pb-8 px-8">
-        <a href="#" className="font-button text-btnTextSm flex gap-x-2">
-          <img src="img/icon-download.svg" alt="download icon"></img>download CV
-        </a>
-        <div className="social flex flex-col gap-y-3">
-          <img src="img/linkedin.svg" alt="linkedin logo" />
-          <img src="img/github.svg" alt="github logo" />
-          <img src="img/behance.svg" alt="behance logo" />
+      <Menu
+        right
+        width="100%"
+        pageWrapId={"page-content"}
+        outerContainerId={"page-container"}
+        styles={MENU_MOBILE_STYLES}
+        isOpen={isOpenMenu}
+        customBurgerIcon={false}
+        customCrossIcon={false}
+      >
+        <div className="menu-bar fixed bg-darkBlack top-0 w-full flex justify-end py-6 px-10">
+          <span
+            className="menu-icon cursor-pointer"
+            onClick={() => toggleMenu()}
+          >
+            <CustomCrossIcon />
+          </span>
         </div>
-      </div>
-    </Menu>
+
+        <div className="routes text-title3 flex flex-col items-center gap-y-3">
+          {["home", "projects", "experience", "about"].map((route) => (
+            <MenuLink
+              key={route}
+              linkId={route}
+              hoveredItemId={hoveredItemId}
+              setHoveredItemId={setHoveredItemId}
+              setIsOpenMenu={setIsOpenMenu}
+              isMobileLink={true}
+              location={location}
+            />
+          ))}
+        </div>
+
+        <div className="menu-footer absolute bottom-0 left-0 w-full flex items-end justify-between pb-8 px-8">
+          <a href="#" className="font-button text-btnTextSm flex gap-x-2">
+            <DonwloadIcon />
+            download CV
+          </a>
+          <div className="social flex flex-col gap-y-3">
+            <LinkedinIcon />
+            <GithubIcon />
+            <BehanceIcon />
+          </div>
+        </div>
+      </Menu>
+    </>
   )
 }

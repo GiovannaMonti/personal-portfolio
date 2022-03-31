@@ -29,7 +29,9 @@ export const MENU_MOBILE_STYLES = {
   },
   bmMenuWrap: {
     position: "fixed",
+    top: 0,
     height: "100%",
+    transition: "350ms",
   },
   bmMenu: {
     overflow: "hidden",
