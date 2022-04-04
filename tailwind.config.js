@@ -6,7 +6,7 @@ module.exports = {
       display: ['"GopherDisplay-Medium"'],
       body: ['"TTC"'],
       button: ['"TTC-Demibold"'],
-      marker: ['"PermanentMarker"'],
+      marker: ['"Permanent Marker"'],
     },
     fontSize: {
       titleHuge: "64px",
@@ -28,6 +28,8 @@ module.exports = {
     },
     colors: {
       darkBlack: "#111111",
+      footerGrey: "#888888",
+      fluoGreen: "#4BFFB3",
     },
   },
   plugins: [],
