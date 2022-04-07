@@ -1,11 +1,33 @@
-import React, { useState } from "react"
+import React, { useState, useRef, useEffect } from "react"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 import { ReactComponent as ArrowDown } from "../assets/arrow-down.svg"
 import { ReactComponent as ArrowSlanted } from "../assets/arrow-slanted.svg"
 import { FooterMobile } from "./FooterMobile"
 
+import { SCROLL_SOFT_SKILLS } from "../constants/helper"
+
 export const HomeMobile = () => {
   const [isHoveringImg, setIsHoveringImage] = useState(false)
+
+  const scrollEls = useRef([])
+  const scrollParent = useRef()
+  gsap.registerPlugin(ScrollTrigger)
+
+  useEffect(() => {
+    gsap.from(scrollEls.current, {
+      xPercent: (index) => {
+        return index % 2 === 0 ? -20 : 50
+      },
+      opacity: 0,
+      stagger: scrollEls.current.length * 0.03,
+      scrollTrigger: {
+        trigger: scrollParent.current,
+        scrub: 0.5, // l'animazione è legata e segue la scrollbar
+      },
+    })
+  }, [])
 
   return (
     <>
@@ -25,7 +47,7 @@ export const HomeMobile = () => {
 
         <div className="scroll-down self-center flex flex-col items-center gap-y-4">
           <span className="text-pSm">SCROLL DOWN</span>
-          <ArrowDown />
+          <ArrowDown className="animate-bounce-smooth" />
         </div>
       </section>
 
@@ -71,19 +93,25 @@ export const HomeMobile = () => {
         <h3 className="font-marker text-title5 self-center">Hard Skills</h3>
       </section>
 
-      <section className="soft-skills flex flex-col p-5 gap-y-8">
+      <section className="soft-skills flex flex-col p-5 gap-y-8 overflow-hidden">
         <h3 className="font-marker text-title5 self-center">...and More</h3>
-        <div className="scrolling-text flex flex-col gap-y-4">
-          <span className="font-display text-title1 block">TEAMWORK</span>
-          <span className="font-display text-title1 block">
-            POSITIVE ATTITUDE
-          </span>
-          <span className="font-display text-title1 block">QUICK THINKING</span>
-          <span className="font-display text-title1 block">
-            PROBLEM SOLVING
-          </span>
-          <span className="font-display text-title1 block">ASSERTIVENESS</span>
-          <span className="font-display text-title1 block">CURIOSITY</span>
+
+        <div
+          ref={scrollParent}
+          className="scrolling-text flex flex-col gap-y-4 items-center text-center"
+        >
+          {SCROLL_SOFT_SKILLS.map((skill) => {
+            const getRef = (element) => scrollEls.current.push(element)
+            return (
+              <span
+                key={skill}
+                ref={getRef}
+                className="font-display text-title2 block text-fluoGreen whitespace-nowrap"
+              >
+                {skill}
+              </span>
+            )
+          })}
         </div>
       </section>
 
