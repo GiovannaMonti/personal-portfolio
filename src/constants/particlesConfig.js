@@ -27,13 +27,13 @@ export const particlesConfig = {
       straight: false,
     },
     number: {
-      value: 200,
+      value: 35,
     },
     shape: {
       type: "circle",
     },
     size: {
-      value: 150,
+      value: 180,
     },
     stroke: {
       opacity: 0.1,
