@@ -7,6 +7,7 @@ import { ReactComponent as ArrowSlanted } from "../assets/arrow-slanted.svg"
 import { FooterMobile } from "./FooterMobile"
 
 import { SCROLL_SOFT_SKILLS } from "../constants/helper"
+import { Link } from "react-router-dom"
 
 export const HomeMobile = () => {
   const [isHoveringImg, setIsHoveringImage] = useState(false)
@@ -137,11 +138,11 @@ export const HomeMobile = () => {
         <div className="links flex flex-col gap-y-3">
           <span className="flex gap-x-3 items-center text-title4 font-display">
             <ArrowSlanted className="inline" />
-            About me
+            <Link to="/about">About me</Link>
           </span>
           <span className="flex gap-x-3 items-center text-title4 font-display">
             <ArrowSlanted className="inline" />
-            Experience
+            <Link to="/experience">Experience</Link>
           </span>
         </div>
         <div className="contact flex flex-col items-center gap-y-8 py-8">

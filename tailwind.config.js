@@ -9,7 +9,8 @@ module.exports = {
       marker: ['"Permanent Marker"'],
     },
     fontSize: {
-      titleHuge: "64px",
+      titleHugeDesktop: "100px",
+      titleHugeMobile: "64px",
       title1: "43px",
       title2: "36px",
       title3: "32px",
@@ -19,7 +20,6 @@ module.exports = {
       altTitle1: "64px",
       altTitle3: "40px",
       altTitle4: "32px",
-      hugeTitle: "100px",
       btnTextMd: "22px",
       btnTextSm: "18px",
       pLg: "26px",

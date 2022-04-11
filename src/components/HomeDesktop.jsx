@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { Link } from "react-router-dom"
 
 import { ReactComponent as ArrowDown } from "../assets/arrow-down.svg"
 import { ReactComponent as ArrowSlantedBig } from "../assets/arrow-slanted-big.svg"
@@ -36,7 +37,7 @@ export const HomeDesktop = () => {
         style={{ height: "calc(100vh - 114.5px)", marginTop: "114.5px" }}
       >
         <div className="welcome-text">
-          <h1 className="text-hugeTitle leading-tight px-10">
+          <h1 className="text-titleHugeDesktop leading-tight px-10">
             <span className="text-fluoGreen font-display">Creative</span>{" "}
             Front-End{" "}
             <span className="text-fluoGreen font-display">Developer</span> &
@@ -187,17 +188,15 @@ export const HomeDesktop = () => {
             <div className="links flex flex-col gap-y-3">
               <span className="flex gap-x-3 items-center text-title2 font-display">
                 <ArrowSlantedBig className="inline" />
-                About me
+                <Link to="/about">About me</Link>
               </span>
               <span className="flex gap-x-3 items-center text-title2 font-display">
                 <ArrowSlantedBig className="inline" />
-                Experience
+                <Link to="/experience">Experience</Link>
               </span>
             </div>
           </div>
         </div>
-
-        <div className="contact flex flex-col items-center gap-y-8 py-8"></div>
       </section>
 
       <FooterDesktop />
