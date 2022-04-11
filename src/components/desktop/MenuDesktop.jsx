@@ -10,7 +10,7 @@ export const MenuDesktop = ({ location }) => {
 
   return (
     <>
-      <div className="menu-bar absolute bg-darkBlack top-0 w-full flex justify-between items-center py-8 px-16">
+      <div className="menu-bar absolute top-0 w-full flex justify-between items-center py-8 px-16">
         <Link to="/home">
           {location.pathname === "/home" ? (
             <LogoDesktopGreen />

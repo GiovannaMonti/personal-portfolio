@@ -1,12 +1,15 @@
 import React, { useState, useRef, useEffect } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import Particles from "react-tsparticles"
 
 import { ReactComponent as ArrowDown } from "../../assets/arrow-down.svg"
 import { ReactComponent as ArrowSlanted } from "../../assets/arrow-slanted.svg"
 import { FooterMobile } from "./FooterMobile"
 
 import { SCROLL_SOFT_SKILLS } from "../../constants/helper"
+import { particlesConfig } from "../../constants/particlesConfig"
+
 import { Link } from "react-router-dom"
 
 export const HomeMobile = () => {
@@ -32,6 +35,18 @@ export const HomeMobile = () => {
 
   return (
     <>
+      <Particles
+        style={{
+          position: "absolute",
+          top: 0,
+          height: "100vh",
+          zIndex: "-1",
+        }}
+        canvasClassName="particle-canvas"
+        options={particlesConfig}
+      >
+        {" "}
+      </Particles>
       <section
         className="welcome-section flex flex-col justify-around p-5"
         style={{ height: "calc(100vh - 82px)", marginTop: "82px" }}

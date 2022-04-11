@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import Particles from "react-tsparticles"
 import { Link } from "react-router-dom"
 
 import { ReactComponent as ArrowDown } from "../../assets/arrow-down.svg"
@@ -8,6 +9,7 @@ import { ReactComponent as ArrowSlantedBig } from "../../assets/arrow-slanted-bi
 import { FooterDesktop } from "./FooterDesktop"
 
 import { SCROLL_SOFT_SKILLS } from "../../constants/helper"
+import { particlesConfig } from "../../constants/particlesConfig"
 
 export const HomeDesktop = () => {
   const [isHoveringImg, setIsHoveringImage] = useState(false)
@@ -32,8 +34,20 @@ export const HomeDesktop = () => {
 
   return (
     <>
+      <Particles
+        style={{
+          position: "absolute",
+          top: 0,
+          height: "100vh",
+          zIndex: "-1",
+        }}
+        canvasClassName="particle-canvas"
+        options={particlesConfig}
+      >
+        {" "}
+      </Particles>
       <section
-        className="welcome-section flex flex-col justify-around px-16"
+        className="welcome-section flex flex-col justify-around px-16 z-100"
         style={{ height: "calc(100vh - 114.5px)", marginTop: "114.5px" }}
       >
         <div className="welcome-text">
@@ -47,6 +61,7 @@ export const HomeDesktop = () => {
 
         <div className="scroll-down self-center flex flex-col items-center gap-y-4">
           <span className="text-title5">SCROLL DOWN</span>
+
           <ArrowDown className="animate-bounce-smooth" />
         </div>
       </section>
