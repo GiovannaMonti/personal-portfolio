@@ -1,7 +1,7 @@
 import React from "react"
 
-import { ReactComponent as DonwloadIcon } from "../assets/icon-download.svg"
-import { ReactComponent as ArrowSlantedBig } from "../assets/arrow-slanted-big.svg"
+import { ReactComponent as DonwloadIcon } from "../../assets/icon-download.svg"
+import { ReactComponent as ArrowSlantedBig } from "../../assets/arrow-slanted-big.svg"
 
 import { FooterDesktop } from "./FooterDesktop"
 

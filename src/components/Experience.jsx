@@ -1,5 +1,5 @@
 import React from "react"
-import { MenuMobile } from "./MenuMobile"
+import { MenuMobile } from "./mobile/MenuMobile"
 
 export const Experience = () => {
   return <>Experience</>

@@ -2,11 +2,11 @@ import React, { useState, useRef, useEffect } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
-import { ReactComponent as ArrowDown } from "../assets/arrow-down.svg"
-import { ReactComponent as ArrowSlanted } from "../assets/arrow-slanted.svg"
+import { ReactComponent as ArrowDown } from "../../assets/arrow-down.svg"
+import { ReactComponent as ArrowSlanted } from "../../assets/arrow-slanted.svg"
 import { FooterMobile } from "./FooterMobile"
 
-import { SCROLL_SOFT_SKILLS } from "../constants/helper"
+import { SCROLL_SOFT_SKILLS } from "../../constants/helper"
 import { Link } from "react-router-dom"
 
 export const HomeMobile = () => {

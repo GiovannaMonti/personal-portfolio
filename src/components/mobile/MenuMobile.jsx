@@ -2,17 +2,17 @@ import React, { useState } from "react"
 import { slide as Menu } from "react-burger-menu"
 import { Link } from "react-router-dom"
 
-import { MenuLink } from "./MenuLink.jsx"
-import { ReactComponent as CustomHamburgerIcon } from "../assets/icon-menu.svg"
-import { ReactComponent as CustomCrossIcon } from "../assets/icon-x.svg"
-import { ReactComponent as LogoMobile } from "../assets/logo-mobile.svg"
-import { ReactComponent as LogoMobileGreen } from "../assets/logo-mobile-green.svg"
-import { ReactComponent as LinkedinIcon } from "../assets/linkedin.svg"
-import { ReactComponent as BehanceIcon } from "../assets/behance.svg"
-import { ReactComponent as GithubIcon } from "../assets/github.svg"
-import { ReactComponent as DonwloadIcon } from "../assets/icon-download.svg"
+import { MenuLink } from "../MenuLink.jsx"
+import { ReactComponent as CustomHamburgerIcon } from "../../assets/icon-menu.svg"
+import { ReactComponent as CustomCrossIcon } from "../../assets/icon-x.svg"
+import { ReactComponent as LogoMobile } from "../../assets/logo-mobile.svg"
+import { ReactComponent as LogoMobileGreen } from "../../assets/logo-mobile-green.svg"
+import { ReactComponent as LinkedinIcon } from "../../assets/linkedin.svg"
+import { ReactComponent as BehanceIcon } from "../../assets/behance.svg"
+import { ReactComponent as GithubIcon } from "../../assets/github.svg"
+import { ReactComponent as DonwloadIcon } from "../../assets/icon-download.svg"
 
-import { MENU_MOBILE_STYLES } from "../styles/MenuMobileStyles.js"
+import { MENU_MOBILE_STYLES } from "../../styles/MenuMobileStyles.js"
 
 export const MenuMobile = ({ location }) => {
   const [hoveredItemId, setHoveredItemId] = useState(null)

@@ -1,8 +1,8 @@
 import React from "react"
 import { useOutletContext } from "react-router-dom"
 
-import { HomeMobile } from "./HomeMobile"
-import { HomeDesktop } from "./HomeDesktop"
+import { HomeMobile } from "./mobile/HomeMobile"
+import { HomeDesktop } from "./desktop/HomeDesktop"
 
 export const Home = () => {
   const isMobile = useOutletContext()

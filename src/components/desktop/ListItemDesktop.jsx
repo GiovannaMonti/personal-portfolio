@@ -1,6 +1,6 @@
 import React from "react"
 
-import { ReactComponent as ArrowSlantedBig } from "../assets/arrow-slanted-big.svg"
+import { ReactComponent as ArrowSlantedBig } from "../../assets/arrow-slanted-big.svg"
 
 export const ListItemDesktop = ({
   title,

@@ -3,7 +3,7 @@ import React from "react"
 import { FooterDesktop } from "./FooterDesktop"
 import { ListItemDesktop } from "./ListItemDesktop"
 
-import projects from "../data/projects.json"
+import projects from "../../data/projects.json"
 
 export const ProjectsDesktop = () => {
   return (

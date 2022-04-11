@@ -1,9 +1,9 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
 
-import { MenuLink } from "./MenuLink.jsx"
-import { ReactComponent as LogoDesktop } from "../assets/logo-desktop.svg"
-import { ReactComponent as LogoDesktopGreen } from "../assets/logo-desktop-green.svg"
+import { MenuLink } from "../MenuLink.jsx"
+import { ReactComponent as LogoDesktop } from "../../assets/logo-desktop.svg"
+import { ReactComponent as LogoDesktopGreen } from "../../assets/logo-desktop-green.svg"
 
 export const MenuDesktop = ({ location }) => {
   const [hoveredItemId, setHoveredItemId] = useState(null)

@@ -3,7 +3,7 @@ import React from "react"
 import { FooterMobile } from "./FooterMobile"
 import { ListItemMobile } from "./ListItemMobile"
 
-import projects from "../data/projects.json"
+import projects from "../../data/projects.json"
 
 export const ProjectsMobile = () => {
   return (

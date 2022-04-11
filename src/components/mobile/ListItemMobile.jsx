@@ -1,6 +1,6 @@
 import React from "react"
 
-import { ReactComponent as ArrowSlanted } from "../assets/arrow-slanted.svg"
+import { ReactComponent as ArrowSlanted } from "../../assets/arrow-slanted.svg"
 
 export const ListItemMobile = ({
   title,
