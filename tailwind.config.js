@@ -31,6 +31,7 @@ module.exports = {
       darkBlack: "#111111",
       footerGrey: "#888888",
       fluoGreen: "#4BFFB3",
+      softGreen: "#97FFDD",
     },
     gridTemplateColumns: {
       about: "120px 1fr",

@@ -1,0 +1,23 @@
+[
+    {
+        "title": "Antonio Testa | 2022",
+        "subtitle": "Development - Wordpress",
+        "description": "Musician personal website.",
+        "category": ["development"],
+        "year": 2022
+    },
+    {
+        "title": "Bloom App | 2022",
+        "subtitle": "UX/UI Design - Figma",
+        "description": "Condominium management app UI/UX design.",
+        "category": ["design"],
+        "year": 2022
+    },
+    {
+        "title": "Mousse | 2021",
+        "subtitle": "Design & Development - Figma, Wordpress",
+        "description": "Design and development of sustainable palm oil e-commerce.",
+        "category": ["design", "development"],
+        "year": 2021
+    }
+]
