@@ -1,8 +1,8 @@
 import React from "react"
 import { useOutletContext } from "react-router-dom"
 
-import { AboutMobile } from "./AboutMobile"
-import { AboutDesktop } from "./AboutDesktop"
+import { AboutMobile } from "./mobile/AboutMobile"
+import { AboutDesktop } from "./desktop/AboutDesktop"
 
 export const About = () => {
   const isMobile = useOutletContext()

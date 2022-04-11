@@ -1,8 +1,8 @@
 import React from "react"
 import { Outlet, useLocation } from "react-router-dom"
 
-import { MenuMobile } from "./MenuMobile"
-import { MenuDesktop } from "./MenuDesktop"
+import { MenuMobile } from "./mobile/MenuMobile"
+import { MenuDesktop } from "./desktop/MenuDesktop"
 
 import { useWindowDimensions } from "../utils/windowDimensions"
 

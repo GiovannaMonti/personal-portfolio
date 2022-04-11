@@ -3,11 +3,11 @@ import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { Link } from "react-router-dom"
 
-import { ReactComponent as ArrowDown } from "../assets/arrow-down.svg"
-import { ReactComponent as ArrowSlantedBig } from "../assets/arrow-slanted-big.svg"
+import { ReactComponent as ArrowDown } from "../../assets/arrow-down.svg"
+import { ReactComponent as ArrowSlantedBig } from "../../assets/arrow-slanted-big.svg"
 import { FooterDesktop } from "./FooterDesktop"
 
-import { SCROLL_SOFT_SKILLS } from "../constants/helper"
+import { SCROLL_SOFT_SKILLS } from "../../constants/helper"
 
 export const HomeDesktop = () => {
   const [isHoveringImg, setIsHoveringImage] = useState(false)

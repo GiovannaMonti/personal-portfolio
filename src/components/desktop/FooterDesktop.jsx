@@ -1,8 +1,8 @@
 import React from "react"
 
-import { ReactComponent as LinkedinIcon } from "../assets/linkedin.svg"
-import { ReactComponent as BehanceIcon } from "../assets/behance.svg"
-import { ReactComponent as GithubIcon } from "../assets/github.svg"
+import { ReactComponent as LinkedinIcon } from "../../assets/linkedin.svg"
+import { ReactComponent as BehanceIcon } from "../../assets/behance.svg"
+import { ReactComponent as GithubIcon } from "../../assets/github.svg"
 
 export const FooterDesktop = () => {
   return (

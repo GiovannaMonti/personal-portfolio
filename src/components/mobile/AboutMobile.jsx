@@ -1,7 +1,7 @@
 import React from "react"
 
-import { ReactComponent as DonwloadIcon } from "../assets/icon-download.svg"
-import { ReactComponent as ArrowSlanted } from "../assets/arrow-slanted.svg"
+import { ReactComponent as DonwloadIcon } from "../../assets/icon-download.svg"
+import { ReactComponent as ArrowSlanted } from "../../assets/arrow-slanted.svg"
 
 import { FooterMobile } from "./FooterMobile"
 
