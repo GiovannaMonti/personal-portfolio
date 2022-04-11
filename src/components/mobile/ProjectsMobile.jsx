@@ -16,7 +16,7 @@ export const ProjectsMobile = () => {
         <div className="sub-menu"></div>
       </section>
 
-      <section className="projects-list px-5 gap-y-8">
+      <section className="projects-list flex flex-col px-5 gap-y-8">
         {projects.map(({ title, subtitle, description, category }) => (
           <ListItemMobile
             key={title}
@@ -24,6 +24,7 @@ export const ProjectsMobile = () => {
             subtitle={subtitle}
             description={description}
             category={category}
+            isClickable={true}
           />
         ))}
       </section>

@@ -80,7 +80,7 @@ export const AboutMobile = () => {
             </a>
             , a data-driven design and development agency based in Milan. Here
             I'm constantly refining my development and teamwork skills, while
-            specializing in data-viz web development.
+            specializing in data-viz development.
           </p>
           <p className="text-pMd py-2">
             My interests include all web development areas and aspects, but I'm

@@ -16,7 +16,7 @@ export const ProjectsDesktop = () => {
         <div className="sub-menu"></div>
       </section>
 
-      <section className="projects-list px-16 gap-y-12">
+      <section className="projects-list flex flex-col px-16 gap-y-8">
         {projects.map(({ title, subtitle, description, category }) => (
           <ListItemDesktop
             key={title}
@@ -24,6 +24,7 @@ export const ProjectsDesktop = () => {
             subtitle={subtitle}
             description={description}
             category={category}
+            isClickable={true}
           />
         ))}
       </section>
