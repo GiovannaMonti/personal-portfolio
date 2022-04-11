@@ -8,18 +8,19 @@ import { useWindowDimensions } from "../utils/windowDimensions"
 
 export const App = () => {
   const { width } = useWindowDimensions()
+  const isMobile = width <= 768
 
   const location = useLocation()
 
   return (
     <div id="page-container">
-      {width < 768 ? (
+      {isMobile ? (
         <MenuMobile location={location} />
       ) : (
         <MenuDesktop location={location} />
       )}
       <div id="page-content">
-        <Outlet />
+        <Outlet context={isMobile} />
       </div>
     </div>
   )

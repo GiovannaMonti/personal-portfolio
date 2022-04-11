@@ -23,7 +23,7 @@ export const MenuMobile = ({ location }) => {
   }
   return (
     <>
-      <div className="menu-bar fixed bg-darkBlack top-0 w-full flex justify-between items-center py-6 px-10">
+      <div className="menu-bar fixed bg-darkBlack top-0 w-full flex justify-between items-center py-6 px-5">
         <Link to="/home">
           {location.pathname === "/home" ? <LogoMobileGreen /> : <LogoMobile />}
         </Link>
@@ -42,7 +42,7 @@ export const MenuMobile = ({ location }) => {
         customBurgerIcon={false}
         customCrossIcon={false}
       >
-        <div className="menu-bar fixed bg-darkBlack top-0 w-full flex justify-end py-6 px-10">
+        <div className="menu-bar fixed bg-darkBlack top-0 w-full flex justify-end py-6 px-5">
           <span
             className="menu-icon cursor-pointer"
             onClick={() => toggleMenu()}
