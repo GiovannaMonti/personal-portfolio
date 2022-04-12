@@ -11,12 +11,8 @@ export const MenuDesktop = ({ location }) => {
   return (
     <>
       <div className="menu-bar absolute top-0 w-full flex justify-between items-center py-8 px-16">
-        <Link to="/home">
-          {location.pathname === "/home" ? (
-            <LogoDesktopGreen />
-          ) : (
-            <LogoDesktop />
-          )}
+        <Link to="/">
+          {location.pathname === "/" ? <LogoDesktopGreen /> : <LogoDesktop />}
         </Link>
         <div className="routes text-title3 flex gap-x-16">
           {["projects", "experience", "about"].map((route) => (

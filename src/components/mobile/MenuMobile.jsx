@@ -24,8 +24,8 @@ export const MenuMobile = ({ location }) => {
   return (
     <>
       <div className="menu-bar fixed bg-darkBlack top-0 w-full flex justify-between items-center py-6 px-5">
-        <Link to="/home">
-          {location.pathname === "/home" ? <LogoMobileGreen /> : <LogoMobile />}
+        <Link to="/">
+          {location.pathname === "/" ? <LogoMobileGreen /> : <LogoMobile />}
         </Link>
         <span className="menu-icon cursor-pointer" onClick={() => toggleMenu()}>
           <CustomHamburgerIcon />
@@ -52,7 +52,7 @@ export const MenuMobile = ({ location }) => {
         </div>
 
         <div className="routes text-title3 flex flex-col items-center gap-y-3">
-          {["home", "projects", "experience", "about"].map((route) => (
+          {["", "projects", "experience", "about"].map((route) => (
             <MenuLink
               key={route}
               linkId={route}

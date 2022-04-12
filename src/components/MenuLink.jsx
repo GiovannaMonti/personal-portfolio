@@ -41,7 +41,7 @@ export const MenuLink = ({
               : { color: "white" }
           }
         >
-          {linkId}
+          {linkId.length > 0 ? linkId : "Home"}
         </span>
       </Link>
     </RoughNotation>

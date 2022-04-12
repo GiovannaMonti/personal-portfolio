@@ -15,7 +15,7 @@ ReactDOM.render(
   <BrowserRouter>
     <Routes>
       <Route path={ROUTES.default} element={<App />}>
-        <Route path={ROUTES.home} element={<Home />} />
+        <Route path={ROUTES.default} element={<Home />} />
         <Route path={ROUTES.projects} element={<Projects />} />
         <Route path={ROUTES.experience} element={<Experience />} />
         <Route path={ROUTES.about} element={<About />} />
