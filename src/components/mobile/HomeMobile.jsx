@@ -52,8 +52,7 @@ export const HomeMobile = () => {
         style={{ height: "calc(100vh - 82px)", marginTop: "82px" }}
       >
         <div className="welcome-text flex flex-col gap-y-6">
-          <h4 className="text-title5">Giovanna Monti</h4>
-          <h1 className="text-title1">
+          <h1 className="text-title1 pt-24">
             <span className="text-fluoGreen font-display">Creative</span>{" "}
             Front-End{" "}
             <span className="text-fluoGreen font-display">Developer</span> &
