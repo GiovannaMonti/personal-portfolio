@@ -35,6 +35,7 @@ module.exports = {
     },
     gridTemplateColumns: {
       about: "120px 1fr",
+      singleProject: "50% 45%",
     },
 
     keyframes: {

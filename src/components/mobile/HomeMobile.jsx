@@ -142,7 +142,7 @@ export const HomeMobile = () => {
           onMouseEnter={() => setIsHoveringImage(true)}
           onMouseLeave={() => setIsHoveringImage(false)}
         />
-        <p className="short-bio text-pSm">
+        <p className="short-bio text-pMd">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar leo,
           ut ut et dictum bibendum pretium ipsum quis. Adipiscing lectus nec
           cursus ullamcorper sit urna, et volutpat. Aliquam at ut lectus semper

@@ -1,20 +1,33 @@
 import React from "react"
-
 import { ReactComponent as ArrowSlanted } from "../../assets/arrow-slanted.svg"
+import { goToProject } from "../../utils/routingUtils"
 
 export const ListItemMobile = ({
   title,
+  year,
+  slug,
   subtitle,
   description,
-  category = null,
+  setSelectedProject,
   isClickable = false,
 }) => {
   return (
     <div className="project flex flex-col gap-y-2">
-      <h2 className="title flex gap-x-3 items-center text-title4">
-        {isClickable && <ArrowSlanted className="inline" />}
-        {title}
-      </h2>
+      {isClickable ? (
+        <h2
+          className="title flex gap-x-3 items-center text-title4 cursor-pointer"
+          onClick={() => {
+            goToProject(slug)
+            setSelectedProject(slug)
+          }}
+        >
+          <ArrowSlanted className="inline" />
+          {title} | {year}
+        </h2>
+      ) : (
+        <h2 className="title flex gap-x-3 items-center text-title4">{title}</h2>
+      )}
+
       <h3 className="subtitle text-title6 text-softGreen">{subtitle}</h3>
       <p className="description text-pSm">{description}</p>
       <div
