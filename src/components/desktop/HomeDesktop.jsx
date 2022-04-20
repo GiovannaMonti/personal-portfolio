@@ -3,13 +3,16 @@ import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Particles from "react-tsparticles"
 import { Link } from "react-router-dom"
+import { groupBy, reverse } from "lodash"
 
 import { ReactComponent as ArrowDown } from "../../assets/arrow-down.svg"
 import { ReactComponent as ArrowSlantedBig } from "../../assets/arrow-slanted-big.svg"
+import { ReactComponent as Dot } from "../../assets/dot.svg"
 import { FooterDesktop } from "./FooterDesktop"
 
 import { SCROLL_SOFT_SKILLS } from "../../constants/helper"
 import { particlesConfig } from "../../constants/particlesConfig"
+import skills from "../../data/skills.json"
 
 export const HomeDesktop = () => {
   const [isHoveringImg, setIsHoveringImage] = useState(false)
@@ -17,6 +20,9 @@ export const HomeDesktop = () => {
   const scrollEls = useRef([])
   const scrollParent = useRef()
   gsap.registerPlugin(ScrollTrigger)
+
+  const skillsGroupedByLevel = reverse(Object.values(groupBy(skills, "level")))
+  console.log("skillsGroupedByLevel: ", skillsGroupedByLevel)
 
   useEffect(() => {
     gsap.from(scrollEls.current, {
@@ -121,9 +127,86 @@ export const HomeDesktop = () => {
         </div>
       </section>
 
-      <section className="hard-skills flex flex-col px-16 py-12"></section>
+      <section className="hard-skills flex flex-col px-16 py-12">
+        <h3 className="font-marker text-title4 self-center text-fluoGreen">
+          Hard Skills
+        </h3>
+
+        <div className="legend py-10 self-end">
+          <div className="flex gap-x-5 items-center justify-end">
+            <div className="flex gap-x-2">
+              {[...Array(4)].map((dot, index) => (
+                <Dot key={index} />
+              ))}
+            </div>
+            <p className="text-pSm">Advanced knowledge</p>
+          </div>
+
+          <div className="flex gap-x-5 items-center justify-end">
+            <div className="flex gap-x-2">
+              {[...Array(3)].map((dot, index) => (
+                <Dot key={index} />
+              ))}
+            </div>
+            <p className="text-pSm">Good knowledge</p>
+          </div>
+
+          <div className="flex gap-x-5 items-center justify-end">
+            <div className="flex gap-x-2">
+              {[...Array(2)].map((dot, index) => (
+                <Dot key={index} />
+              ))}
+            </div>
+            <p className="text-pSm">Base knowledge</p>
+          </div>
+
+          <div className="flex gap-x-5 items-center justify-end">
+            <div className="flex gap-x-2">
+              {[...Array(1)].map((dot, index) => (
+                <Dot key={index} />
+              ))}
+            </div>
+            <p className="text-pSm">Limited knowledge</p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-four gap-x-12">
+          {skillsGroupedByLevel.map((skillGroup) => {
+            return (
+              <div>
+                {skillGroup.map((skill) => {
+                  const level = skill.level
+
+                  return (
+                    <>
+                      <div
+                        key={skill.name}
+                        className="skill flex justify-between items-center"
+                      >
+                        <p className="text-pLg">{skill.name}</p>
+                        <div className="flex gap-x-2">
+                          {[...Array(level)].map((dot, index) => (
+                            <Dot key={`${skill.name}${index}`} />
+                          ))}
+                        </div>
+                      </div>
+                      <div
+                        className="separator w-full mb-3 mt-3"
+                        style={{ background: "white", height: "1px" }}
+                      />
+                    </>
+                  )
+                })}
+              </div>
+            )
+          })}
+        </div>
+      </section>
 
       <section className="soft-skills flex flex-col items-center text-center px-16 py-12 gap-y-8 overflow-hidden">
+        <h3 className="font-marker text-title4 self-center text-fluoGreen">
+          Soft Skills
+        </h3>
         <div
           ref={scrollParent}
           className="scrolling-text flex flex-col gap-y-4"

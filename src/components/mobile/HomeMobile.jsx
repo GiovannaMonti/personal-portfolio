@@ -2,15 +2,16 @@ import React, { useState, useRef, useEffect } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Particles from "react-tsparticles"
+import { Link } from "react-router-dom"
 
 import { ReactComponent as ArrowDown } from "../../assets/arrow-down.svg"
 import { ReactComponent as ArrowSlanted } from "../../assets/arrow-slanted.svg"
+import { ReactComponent as Dot } from "../../assets/dot.svg"
 import { FooterMobile } from "./FooterMobile"
 
 import { SCROLL_SOFT_SKILLS } from "../../constants/helper"
 import { particlesConfig } from "../../constants/particlesConfig"
-
-import { Link } from "react-router-dom"
+import skills from "../../data/skills.json"
 
 export const HomeMobile = () => {
   const [isHoveringImg, setIsHoveringImage] = useState(false)
@@ -52,8 +53,7 @@ export const HomeMobile = () => {
         style={{ height: "calc(100vh - 82px)", marginTop: "82px" }}
       >
         <div className="welcome-text flex flex-col gap-y-6">
-          <h4 className="text-title5">Giovanna Monti</h4>
-          <h1 className="text-title1">
+          <h1 className="text-title1 pt-24">
             <span className="text-fluoGreen font-display">Creative</span>{" "}
             Front-End{" "}
             <span className="text-fluoGreen font-display">Developer</span> &
@@ -106,11 +106,77 @@ export const HomeMobile = () => {
       </section>
 
       <section className="hard-skills flex flex-col p-5">
-        <h3 className="font-marker text-title5 self-center">Hard Skills</h3>
+        <h3 className="font-marker text-title5 self-center text-fluoGreen">
+          Hard Skills
+        </h3>
+
+        <div className="legend py-10">
+          <div className="flex gap-x-5 items-center">
+            <div className="flex gap-x-2">
+              {[...Array(4)].map((dot, index) => (
+                <Dot key={"adv" + index} />
+              ))}
+            </div>
+            <p className="text-pSm">Advanced knowledge</p>
+          </div>
+
+          <div className="flex gap-x-5 items-center">
+            <div className="flex gap-x-2">
+              {[...Array(3)].map((dot, index) => (
+                <Dot key={"good" + index} />
+              ))}
+            </div>
+            <p className="text-pSm">Good knowledge</p>
+          </div>
+
+          <div className="flex gap-x-5 items-center">
+            <div className="flex gap-x-2">
+              {[...Array(2)].map((dot, index) => (
+                <Dot key={"base" + index} />
+              ))}
+            </div>
+            <p className="text-pSm">Base knowledge</p>
+          </div>
+
+          <div className="flex gap-x-5 items-center">
+            <div className="flex gap-x-2">
+              {[...Array(1)].map((dot, index) => (
+                <Dot key={"lim" + index} />
+              ))}
+            </div>
+            <p className="text-pSm">Limited knowledge</p>
+          </div>
+        </div>
+
+        {skills.map((skill) => {
+          const level = skill.level
+
+          return (
+            <>
+              <div
+                key={skill.name}
+                className="skill flex justify-between items-center"
+              >
+                <p className="text-pMd">{skill.name}</p>
+                <div className="flex gap-x-2">
+                  {[...Array(level)].map((dot, index) => (
+                    <Dot key={`${skill.name}${index}`} />
+                  ))}
+                </div>
+              </div>
+              <div
+                className="separator w-full mb-3 mt-3"
+                style={{ background: "white", height: "1px" }}
+              />
+            </>
+          )
+        })}
       </section>
 
       <section className="soft-skills flex flex-col p-5 gap-y-8 overflow-hidden">
-        <h3 className="font-marker text-title5 self-center">...and More</h3>
+        <h3 className="font-marker text-title5 self-center text-fluoGreen">
+          Soft Skills
+        </h3>
 
         <div
           ref={scrollParent}
@@ -122,7 +188,7 @@ export const HomeMobile = () => {
               <span
                 key={skill}
                 ref={getRef}
-                className="font-display text-title2 block text-fluoGreen whitespace-nowrap"
+                className="font-display text-title2 block whitespace-nowrap"
               >
                 {skill}
               </span>
@@ -143,7 +209,7 @@ export const HomeMobile = () => {
           onMouseEnter={() => setIsHoveringImage(true)}
           onMouseLeave={() => setIsHoveringImage(false)}
         />
-        <p className="short-bio text-pSm">
+        <p className="short-bio text-pMd">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar leo,
           ut ut et dictum bibendum pretium ipsum quis. Adipiscing lectus nec
           cursus ullamcorper sit urna, et volutpat. Aliquam at ut lectus semper
