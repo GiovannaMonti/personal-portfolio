@@ -48,9 +48,24 @@ module.exports = {
           transform: "translateY(-5px)",
         },
       },
+      popup: {
+        "0%": {
+          transform: "translateY(100px) rotate(-5deg)",
+          opacity: 0.5,
+        },
+        "15%": {
+          transform: "translateY(0px) rotate(0deg)",
+          opacity: 1,
+        },
+        "100%": {
+          transform: "translateY(100px)",
+          opacity: 0,
+        },
+      },
     },
     animation: {
       "bounce-smooth": "bounce-smooth 1.5s ease-in-out infinite",
+      popup: "popup 2.5s ease-in-out",
     },
   },
   plugins: [],

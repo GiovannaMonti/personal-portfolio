@@ -1,5 +1,6 @@
 import React from "react"
 import { Outlet, useLocation } from "react-router-dom"
+import { HiddenEasterEgg } from "react-hidden-easter-egg"
 
 import { MenuMobile } from "./mobile/MenuMobile"
 import { MenuDesktop } from "./desktop/MenuDesktop"
@@ -14,6 +15,23 @@ export const App = () => {
 
   return (
     <div id="page-container">
+      <HiddenEasterEgg
+        resetEggMs={2500}
+        cb={() => {
+          const audio = new Audio("audio/wubba-lubba.mp3")
+          audio.play()
+        }}
+        code={["8", "0", "0", "8", "5"]}
+      >
+        <div className="absolute overflow-hidden top-0 left-0 w-full h-full flex items-center justify-center">
+          <img
+            className="h-full w-auto p-12 animate-popup"
+            src="img/Rick.png"
+            alt="Rick Sanchez"
+          />
+        </div>
+      </HiddenEasterEgg>
+
       {isMobile ? (
         <MenuMobile location={location} />
       ) : (

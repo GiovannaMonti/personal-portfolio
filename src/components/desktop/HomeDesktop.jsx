@@ -22,7 +22,6 @@ export const HomeDesktop = () => {
   gsap.registerPlugin(ScrollTrigger)
 
   const skillsGroupedByLevel = reverse(Object.values(groupBy(skills, "level")))
-  console.log("skillsGroupedByLevel: ", skillsGroupedByLevel)
 
   useEffect(() => {
     gsap.from(scrollEls.current, {
