@@ -17,7 +17,7 @@ export const ExperienceMobile = () => {
       </section>
 
       <section className="work-list flex flex-col px-5 gap-y-8 pb-16">
-        <h3 className="font-marker text-title4 text-fluoGreen">
+        <h3 className="font-display text-title4 text-fluoGreen">
           Work Experience
         </h3>
         {workExperience.map(({ title, subtitle, description }) => (
@@ -31,7 +31,7 @@ export const ExperienceMobile = () => {
       </section>
 
       <section className="school-list flex flex-col px-5 gap-y-8">
-        <h3 className="font-marker text-title4 text-fluoGreen">Education</h3>
+        <h3 className="font-display text-title4 text-fluoGreen">Education</h3>
         {schoolExperience.map(({ title, subtitle, description }) => (
           <ListItemMobile
             key={title}

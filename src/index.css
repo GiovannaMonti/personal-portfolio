@@ -9,12 +9,6 @@
 }
 
 @font-face {
-  font-family: "Permanent Marker";
-  src: local("Permanent Marker"),
-    url(./fonts/PermanentMarker.ttf) format("truetype");
-}
-
-@font-face {
   font-family: "TTC";
   src: local("TTC"), url(./fonts/TTC.otf) format("opentype");
 }
@@ -93,8 +87,9 @@ h2 {
 h3,
 h4,
 h5 {
-  font-family: "Permanent Marker", sans-serif;
+  font-family: "GopherDisplay-Medium", sans-serif;
   letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 p,

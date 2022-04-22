@@ -3,10 +3,9 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      display: ['"GopherDisplay-Medium"'],
-      body: ['"TTC"'],
-      button: ['"TTC-Demibold"'],
-      marker: ['"Permanent Marker"'],
+      display: ["GopherDisplay-Medium"],
+      body: ["TTC"],
+      button: ["TTC-Demibold"],
     },
     fontSize: {
       titleHugeDesktop: "100px",

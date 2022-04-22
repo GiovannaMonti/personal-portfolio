@@ -32,7 +32,7 @@ export const ProjectsDesktop = () => {
                 animationDuration={300}
               >
                 <span
-                  className="text-title3 font-marker tracking-wider cursor-pointer"
+                  className="text-title3 font-display tracking-wider cursor-pointer"
                   onClick={() => {
                     setFilteredProjects(projects)
                     setIsActiveTab("all")
@@ -52,7 +52,7 @@ export const ProjectsDesktop = () => {
                 animationDuration={300}
               >
                 <span
-                  className="text-title3 font-marker tracking-wider cursor-pointer"
+                  className="text-title3 font-display tracking-wider cursor-pointer"
                   onClick={() => {
                     setFilteredProjects(
                       projects.filter((proj) => {
@@ -76,7 +76,7 @@ export const ProjectsDesktop = () => {
                 animationDuration={300}
               >
                 <span
-                  className="text-title3 font-marker tracking-wider cursor-pointer"
+                  className="text-title3 font-display tracking-wider cursor-pointer"
                   onClick={() => {
                     setFilteredProjects(
                       projects.filter((proj) => {

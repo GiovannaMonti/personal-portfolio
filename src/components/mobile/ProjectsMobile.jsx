@@ -33,7 +33,7 @@ export const ProjectsMobile = () => {
                 animationDuration={300}
               >
                 <span
-                  className="text-title5 font-marker tracking-wider cursor-pointer"
+                  className="text-title5 font-display tracking-wider cursor-pointer"
                   onClick={() => {
                     setFilteredProjects(projects)
                     setIsActiveTab("all")
@@ -53,7 +53,7 @@ export const ProjectsMobile = () => {
                 animationDuration={300}
               >
                 <span
-                  className="text-title5 font-marker tracking-wider cursor-pointer"
+                  className="text-title5 font-display tracking-wider cursor-pointer"
                   onClick={() => {
                     setFilteredProjects(
                       projects.filter((proj) => {
@@ -77,7 +77,7 @@ export const ProjectsMobile = () => {
                 animationDuration={300}
               >
                 <span
-                  className="text-title5 font-marker tracking-wider cursor-pointer"
+                  className="text-title5 font-display tracking-wider cursor-pointer"
                   onClick={() => {
                     setFilteredProjects(
                       projects.filter((proj) => {

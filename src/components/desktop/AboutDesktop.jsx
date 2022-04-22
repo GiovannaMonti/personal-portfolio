@@ -36,7 +36,7 @@ export const AboutDesktop = () => {
 
         <div className="desc flex flex-col gap-y-6">
           <div className="bio pb-10">
-            <h3 className="font-marker text-altTitle4">Bio</h3>
+            <h3 className="font-display text-altTitle4 text-fluoGreen">Bio</h3>
             <p className="text-pLg py-2">
               I'm Giovanna, class 1998, and I'm a creative Developer and
               Designer.
@@ -57,7 +57,7 @@ export const AboutDesktop = () => {
           </div>
 
           <div className="interests">
-            <h3 className="font-marker text-altTitle4">
+            <h3 className="font-display text-altTitle4 text-fluoGreen">
               Background + Interests
             </h3>
             <p className="text-pLg py-2">
@@ -104,7 +104,9 @@ export const AboutDesktop = () => {
           </div>
 
           <div className="contact flex flex-col gap-y-12">
-            <h3 className="font-marker text-altTitle4 mt-12">Contact Me</h3>
+            <h3 className="font-display text-altTitle4 mt-12 text-fluoGreen">
+              Get in touch
+            </h3>
             <div className="e-mail flex gap-x-1 items-center">
               <ArrowSlantedBig className="inline" />
               <a

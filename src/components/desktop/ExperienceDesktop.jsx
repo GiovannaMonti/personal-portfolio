@@ -17,7 +17,7 @@ export const ExperienceDesktop = () => {
       </section>
 
       <section className="work-list flex flex-col px-16 gap-y-12">
-        <h3 className="font-marker text-altTitle3 text-fluoGreen">
+        <h3 className="font-display text-altTitle3 text-fluoGreen">
           Work Experience
         </h3>
         {workExperience.map(({ title, subtitle, description }) => (
@@ -31,7 +31,7 @@ export const ExperienceDesktop = () => {
       </section>
 
       <section className="school-list flex flex-col px-16 gap-y-12">
-        <h3 className="font-marker text-altTitle3 text-fluoGreen pt-24 ">
+        <h3 className="font-display text-altTitle3 text-fluoGreen pt-24 ">
           Education
         </h3>
         {schoolExperience.map(({ title, subtitle, description }) => (

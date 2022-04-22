@@ -27,7 +27,7 @@ export const SingleProjectDesktop = ({
       <section className="single-project">
         <h1 className="text-altTitle1 pt-8">{project.title}</h1>
 
-        <h3 className="subtitle text-title4 text-softGreen pb-16">
+        <h3 className="subtitle text-title6 text-softGreen pb-16">
           {project.year} - {project.subtitle}
         </h3>
 
@@ -35,12 +35,14 @@ export const SingleProjectDesktop = ({
           <section className="desc flex flex-col gap-y-12">
             {project.link && (
               <div>
-                <h3 className="font-marker text-title4">View project</h3>
+                <h3 className="font-display text-title4 text-fluoGreen">
+                  View project
+                </h3>
                 <a
                   href={project.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-pLg py-2 flex gap-x-2 items-center text-fluoGreen"
+                  className="text-pLg py-2 flex gap-x-2 items-center"
                 >
                   <ArrowSlantedBig /> {project.title}
                 </a>
@@ -48,7 +50,9 @@ export const SingleProjectDesktop = ({
             )}
 
             <div className="description">
-              <h3 className="font-marker text-title4">Description</h3>
+              <h3 className="font-display text-title4 text-fluoGreen">
+                Description
+              </h3>
               <p className="text-pLg py-2">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea,
                 temporibus!
@@ -69,12 +73,12 @@ export const SingleProjectDesktop = ({
             </div>
 
             <div>
-              <h3 className="font-marker text-title4">Tools</h3>
+              <h3 className="font-display text-title4 text-fluoGreen">Tools</h3>
               <p className="text-pLg py-2">{project.tools}</p>
             </div>
 
             <div>
-              <h3 className="font-marker text-title4">Team</h3>
+              <h3 className="font-display text-title4 text-fluoGreen">Team</h3>
               <p className="text-pLg py-2">{project.team}</p>
             </div>
           </section>

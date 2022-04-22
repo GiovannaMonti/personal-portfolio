@@ -65,7 +65,7 @@ export const HomeDesktop = () => {
         </div>
 
         <div className="scroll-down self-center flex flex-col items-center gap-y-4">
-          <span className="text-title5">SCROLL DOWN</span>
+          <span className="text-title6">SCROLL DOWN</span>
 
           <ArrowDown className="animate-bounce-smooth" />
         </div>
@@ -73,7 +73,7 @@ export const HomeDesktop = () => {
 
       <section className="project-highlights grid grid-cols-about gap-x-12 px-16">
         <h3
-          className="font-marker text-altTitle1 text-fluoGreen"
+          className="font-display text-altTitle1 text-fluoGreen"
           style={{
             textOrientation: "upright",
             writingMode: "vertical-lr",
@@ -127,7 +127,7 @@ export const HomeDesktop = () => {
       </section>
 
       <section className="hard-skills flex flex-col px-16 py-12">
-        <h3 className="font-marker text-title4 self-center text-fluoGreen">
+        <h3 className="font-display text-title4 self-center text-fluoGreen">
           Hard Skills
         </h3>
 
@@ -203,7 +203,7 @@ export const HomeDesktop = () => {
       </section>
 
       <section className="soft-skills flex flex-col items-center text-center px-16 py-12 gap-y-8 overflow-hidden">
-        <h3 className="font-marker text-title4 self-center text-fluoGreen">
+        <h3 className="font-display text-title4 self-center text-fluoGreen">
           Soft Skills
         </h3>
         <div
@@ -227,7 +227,7 @@ export const HomeDesktop = () => {
 
       <section className="about grid grid-cols-about gap-x-12 px-16">
         <h3
-          className="font-marker text-altTitle1 text-fluoGreen"
+          className="font-display text-altTitle1 text-fluoGreen"
           style={{
             textOrientation: "upright",
             writingMode: "vertical-lr",
@@ -269,7 +269,9 @@ export const HomeDesktop = () => {
               </p>
 
               <div className="contact flex flex-col gap-y-12">
-                <h3 className="font-marker text-altTitle4 mt-12">Contact Me</h3>
+                <h3 className="font-display text-altTitle4 mt-12 text-fluoGreen">
+                  Contact Me
+                </h3>
                 <div className="e-mail flex gap-x-1 items-center">
                   <ArrowSlantedBig className="inline" />
                   <a

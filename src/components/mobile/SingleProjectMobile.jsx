@@ -37,12 +37,14 @@ export const SingleProjectMobile = ({
         <section className="desc flex flex-col gap-y-12">
           {project.link && (
             <div>
-              <h3 className="font-marker text-title5">View project</h3>
+              <h3 className="font-display text-title5 text-fluoGreen">
+                View project
+              </h3>
               <a
                 href={project.link}
                 target="_blank"
                 rel="noreferrer"
-                className="text-pMd py-2 flex gap-x-2 items-center font-semibold text-fluoGreen"
+                className="text-pMd py-2 flex gap-x-2 items-center"
               >
                 <ArrowSlanted /> {project.title}
               </a>
@@ -50,7 +52,9 @@ export const SingleProjectMobile = ({
           )}
 
           <div className="description">
-            <h3 className="font-marker text-title5">Description</h3>
+            <h3 className="font-display text-title5 text-fluoGreen">
+              Description
+            </h3>
             <p className="text-pMd py-2">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea,
               temporibus!
@@ -71,12 +75,12 @@ export const SingleProjectMobile = ({
           </div>
 
           <div>
-            <h3 className="font-marker text-title5">Tools</h3>
+            <h3 className="font-display text-title5 text-fluoGreen">Tools</h3>
             <p className="text-pMd py-2">{project.tools}</p>
           </div>
 
           <div>
-            <h3 className="font-marker text-title5">Team</h3>
+            <h3 className="font-display text-title5 text-fluoGreen">Team</h3>
             <p className="text-pMd py-2">{project.team}</p>
           </div>
         </section>

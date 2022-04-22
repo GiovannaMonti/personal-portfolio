@@ -2,7 +2,7 @@
     {
         "title": "Antonio Testa",
         "slug": "antonio-testa",
-        "subtitle": "Development - Wordpress",
+        "subtitle": "Development / Wordpress",
         "description": "Musician personal website.",
         "category": ["development"],
         "year": 2022,
@@ -15,7 +15,7 @@
     {
         "title": "Bloom App",
         "slug": "bloom",
-        "subtitle": "UX/UI Design - Figma",
+        "subtitle": "UX/UI Design / Figma",
         "description": "Condominium management app UI/UX design.",
         "category": ["design"],
         "year": 2022,
@@ -28,7 +28,7 @@
     {
         "title": "Mousse",
         "slug": "mousse",
-        "subtitle": "Design & Development - Figma, Wordpress",
+        "subtitle": "Design & Development / Figma, Wordpress",
         "description": "Design and development of sustainable palm oil e-commerce.",
         "category": ["design", "development"],
         "year": 2021,

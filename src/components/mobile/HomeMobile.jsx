@@ -68,7 +68,7 @@ export const HomeMobile = () => {
       </section>
 
       <section className="project-highlights flex flex-col">
-        <h3 className="font-marker text-title5 self-center">
+        <h3 className="font-display text-title5 self-center text-fluoGreen">
           Project Highlights
         </h3>
 
@@ -106,7 +106,7 @@ export const HomeMobile = () => {
       </section>
 
       <section className="hard-skills flex flex-col p-5">
-        <h3 className="font-marker text-title5 self-center text-fluoGreen">
+        <h3 className="font-display text-title5 self-center text-fluoGreen">
           Hard Skills
         </h3>
 
@@ -174,7 +174,7 @@ export const HomeMobile = () => {
       </section>
 
       <section className="soft-skills flex flex-col p-5 gap-y-8 overflow-hidden">
-        <h3 className="font-marker text-title5 self-center text-fluoGreen">
+        <h3 className="font-display text-title5 self-center text-fluoGreen">
           Soft Skills
         </h3>
 
@@ -198,7 +198,9 @@ export const HomeMobile = () => {
       </section>
 
       <section className="about flex flex-col gap-y-8 p-5">
-        <h3 className="font-marker text-title5 self-center">Who Am I?</h3>
+        <h3 className="font-display text-title5 self-center text-fluoGreen">
+          Who Am I?
+        </h3>
         <img
           src={
             isHoveringImg
@@ -227,7 +229,9 @@ export const HomeMobile = () => {
           </span>
         </div>
         <div className="contact flex flex-col items-center gap-y-8 py-8">
-          <h3 className="font-marker text-title5 self-center">Contact Me</h3>
+          <h3 className="font-display text-title5 self-center text-fluoGreen">
+            Contact Me
+          </h3>
           <div className="e-mail flex gap-x-1 items-center">
             <ArrowSlanted className="inline" />
             <a
