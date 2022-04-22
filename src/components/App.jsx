@@ -18,7 +18,6 @@ export const App = () => {
       <HiddenEasterEgg
         resetEggMs={2500}
         cb={() => {
-          console.log("Get Ricked!")
           const audio = new Audio("audio/wubba-lubba.mp3")
           audio.play()
         }}
