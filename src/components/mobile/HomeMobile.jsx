@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react"
+import { RoughNotation } from "react-rough-notation"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Particles from "react-tsparticles"
@@ -54,10 +55,28 @@ export const HomeMobile = () => {
       >
         <div className="welcome-text flex flex-col gap-y-6">
           <h1 className="text-title1 pt-24">
-            <span className="text-fluoGreen font-display">Creative</span>{" "}
+            <RoughNotation
+              type="underline"
+              show={true}
+              strokeWidth={4}
+              iterations={2}
+              color="#4BFFB3"
+              animationDuration={300}
+            >
+              <span className="text-fluoGreen font-display">Creative</span>{" "}
+            </RoughNotation>
             Front-End{" "}
-            <span className="text-fluoGreen font-display">Developer</span> &
-            Designer
+            <RoughNotation
+              type="underline"
+              show={true}
+              strokeWidth={4}
+              iterations={2}
+              color="#4BFFB3"
+              animationDuration={300}
+            >
+              <span className="text-fluoGreen font-display">Developer</span>{" "}
+            </RoughNotation>
+            & Designer
           </h1>
         </div>
 
@@ -75,7 +94,12 @@ export const HomeMobile = () => {
         <div className="project-teaser px-5 py-10 flex flex-col gap-y-4">
           <img src="img/bloom-preview.png" alt="bloom app" />
           <div className="project-details">
-            <h2 className="title flex gap-x-3 items-center text-title4">
+            <h2
+              className="title flex gap-x-3 items-center text-title4"
+              onClick={() => {
+                window.location = "/projects#mbloom"
+              }}
+            >
               <ArrowSlanted className="inline" />
               Bloom App | 2022
             </h2>
@@ -93,7 +117,12 @@ export const HomeMobile = () => {
           />
 
           <div className="project-details">
-            <h2 className="title flex gap-x-3 items-center text-title4">
+            <h2
+              className="title flex gap-x-3 items-center text-title4"
+              onClick={() => {
+                window.location = "/projects#maison-du-silence"
+              }}
+            >
               <ArrowSlanted className="inline" />
               Maison du Silence | 2021
             </h2>
@@ -234,12 +263,21 @@ export const HomeMobile = () => {
           </h3>
           <div className="e-mail flex gap-x-1 items-center">
             <ArrowSlanted className="inline" />
-            <a
-              href="mailto:giovannamontidev@gmail.com"
-              className="font-body text-pMd"
+            <RoughNotation
+              type="underline"
+              show={true}
+              strokeWidth={3}
+              iterations={2}
+              color="#4BFFB3"
+              animationDuration={300}
             >
-              giovannamontidev@gmail.com
-            </a>
+              <a
+                href="mailto:giovannamontidev@gmail.com"
+                className="font-body text-pMd"
+              >
+                giovannamontidev@gmail.com
+              </a>
+            </RoughNotation>
           </div>
         </div>
       </section>

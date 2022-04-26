@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Particles from "react-tsparticles"
 import { Link } from "react-router-dom"
 import { groupBy, reverse } from "lodash"
+import { RoughNotation } from "react-rough-notation"
 
 import { ReactComponent as ArrowDown } from "../../assets/arrow-down.svg"
 import { ReactComponent as ArrowSlantedBig } from "../../assets/arrow-slanted-big.svg"
@@ -16,6 +17,7 @@ import skills from "../../data/skills.json"
 
 export const HomeDesktop = () => {
   const [isHoveringImg, setIsHoveringImage] = useState(false)
+  const [hoveredTextId, setHoveredTextId] = useState(null)
 
   const scrollEls = useRef([])
   const scrollParent = useRef()
@@ -57,10 +59,50 @@ export const HomeDesktop = () => {
       >
         <div className="welcome-text">
           <h1 className="text-titleHugeDesktop leading-tight px-10">
-            <span className="text-fluoGreen font-display">Creative</span>{" "}
+            <RoughNotation
+              type="crossed-off"
+              show={hoveredTextId === "creative"}
+              strokeWidth={4}
+              iterations={3}
+              color="#ffffff"
+              animationDuration={500}
+            >
+              <span
+                className="text-fluoGreen font-display"
+                onMouseOver={() => {
+                  setHoveredTextId("creative")
+                }}
+                onMouseOut={() => {
+                  setHoveredTextId(null)
+                }}
+              >
+                Creative
+              </span>
+            </RoughNotation>{" "}
             Front-End{" "}
-            <span className="text-fluoGreen font-display">Developer</span> &
-            Designer
+            <RoughNotation
+              type="highlight"
+              show={hoveredTextId === "developer"}
+              iterations={1}
+              color="#ffffff"
+              animationDuration={300}
+            >
+              <span
+                className="text-fluoGreen font-display"
+                onMouseOver={() => {
+                  setHoveredTextId("developer")
+                }}
+                onMouseOut={() => {
+                  setHoveredTextId(null)
+                }}
+                style={
+                  hoveredTextId === "developer" ? { color: "#000000" } : null
+                }
+              >
+                Developer
+              </span>
+            </RoughNotation>{" "}
+            & Designer
           </h1>
         </div>
 
@@ -89,15 +131,43 @@ export const HomeDesktop = () => {
               src="img/bloom-preview.png"
               alt="bloom app"
             />
+
             <div className="project-details">
-              <h2 className="title flex gap-x-3 items-center text-title2">
+              <h2
+                className="title flex gap-x-3 items-center text-title2 cursor-pointer"
+                onClick={() => {
+                  window.location = "/projects#bloom"
+                }}
+                onMouseOver={() => {
+                  setHoveredTextId("bloom")
+                }}
+                onMouseOut={() => {
+                  setHoveredTextId(null)
+                }}
+              >
                 <ArrowSlantedBig className="inline" />
                 Bloom App | 2022
               </h2>
-              <p className="description text-pLg">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet
-                tellus interdum integer ut.
-              </p>
+
+              <RoughNotation
+                type="highlight"
+                multiline={true}
+                show={hoveredTextId === "bloom"}
+                strokeWidth={4}
+                iterations={1}
+                color="#4BFFB3"
+                animationDuration={500}
+              >
+                <span
+                  className="description text-pLg"
+                  style={
+                    hoveredTextId === "bloom" ? { color: "#000000" } : null
+                  }
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet
+                  tellus interdum integer ut.
+                </span>
+              </RoughNotation>
             </div>
           </div>
 
@@ -113,14 +183,40 @@ export const HomeDesktop = () => {
               alt="maison du silence website"
             />
             <div className="project-details">
-              <h2 className="title flex gap-x-3 items-center text-title2">
+              <h2
+                className="title flex gap-x-3 items-center text-title2 cursor-pointer"
+                onClick={() => {
+                  window.location = "/projects#maison-du-silence"
+                }}
+                onMouseOver={() => {
+                  setHoveredTextId("maison")
+                }}
+                onMouseOut={() => {
+                  setHoveredTextId(null)
+                }}
+              >
                 <ArrowSlantedBig className="inline" />
                 Maison du Silence | 2021
               </h2>
-              <p className="description text-pLg">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet
-                tellus interdum integer ut.
-              </p>
+              <RoughNotation
+                type="highlight"
+                multiline={true}
+                show={hoveredTextId === "maison"}
+                strokeWidth={4}
+                iterations={1}
+                color="#4BFFB3"
+                animationDuration={500}
+              >
+                <span
+                  className="description text-pLg"
+                  style={
+                    hoveredTextId === "maison" ? { color: "#000000" } : null
+                  }
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet
+                  tellus interdum integer ut.
+                </span>
+              </RoughNotation>
             </div>
           </div>
         </div>
@@ -272,27 +368,83 @@ export const HomeDesktop = () => {
                 <h3 className="font-display text-altTitle4 mt-12 text-fluoGreen">
                   Contact Me
                 </h3>
+
                 <div className="e-mail flex gap-x-1 items-center">
                   <ArrowSlantedBig className="inline" />
-                  <a
-                    href="mailto:giovannamontidev@gmail.com"
-                    className="font-body text-pLg"
+                  <RoughNotation
+                    type="underline"
+                    show={hoveredTextId === "mail"}
+                    strokeWidth={3}
+                    iterations={2}
+                    color="#4BFFB3"
+                    animationDuration={300}
                   >
-                    giovannamontidev@gmail.com
-                  </a>
+                    <a
+                      href="mailto:giovannamontidev@gmail.com"
+                      className="font-body text-pLg"
+                      onMouseOver={() => {
+                        setHoveredTextId("mail")
+                      }}
+                      onMouseOut={() => {
+                        setHoveredTextId(null)
+                      }}
+                    >
+                      giovannamontidev@gmail.com
+                    </a>
+                  </RoughNotation>
                 </div>
               </div>
             </div>
 
             <div className="links flex flex-col gap-y-3">
-              <span className="flex gap-x-3 items-center text-title2 font-display">
-                <ArrowSlantedBig className="inline" />
-                <Link to="/about">About me</Link>
-              </span>
-              <span className="flex gap-x-3 items-center text-title2 font-display">
-                <ArrowSlantedBig className="inline" />
-                <Link to="/experience">Experience</Link>
-              </span>
+              <RoughNotation
+                type="circle"
+                show={hoveredTextId === "about"}
+                padding={[10, 20, 10, 20]}
+                strokeWidth={4}
+                iterations={1}
+                color="#4BFFB3"
+                animationDuration={500}
+              >
+                <span className="flex gap-x-3 items-center text-title2 font-display">
+                  <ArrowSlantedBig className="inline" />
+                  <Link
+                    to="/about"
+                    onMouseOver={() => {
+                      setHoveredTextId("about")
+                    }}
+                    onMouseOut={() => {
+                      setHoveredTextId(null)
+                    }}
+                  >
+                    About me
+                  </Link>
+                </span>
+              </RoughNotation>
+              <RoughNotation
+                type="circle"
+                show={hoveredTextId === "experience"}
+                padding={[10, 20, 10, 20]}
+                strokeWidth={4}
+                iterations={1}
+                color="#4BFFB3"
+                animationDuration={500}
+              >
+                <span className="flex gap-x-3 items-center text-title2 font-display">
+                  <ArrowSlantedBig className="inline" />
+                  <Link
+                    to="/experience"
+                    onMouseOver={() => {
+                      setHoveredTextId("experience")
+                    }}
+                    onMouseOut={() => {
+                      setHoveredTextId(null)
+                    }}
+                  >
+                    Experience
+                  </Link>
+                </span>
+              </RoughNotation>
             </div>
           </div>
         </div>

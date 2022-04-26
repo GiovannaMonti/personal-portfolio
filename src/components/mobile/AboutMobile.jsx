@@ -12,7 +12,9 @@ export const AboutMobile = () => {
         className="intro flex flex-col gap-y-6 px-5 py-16"
         style={{ marginTop: "82px" }}
       >
-        <h1 className="text-titleHugeMobile leading-none">Hi! I'm Giovanna</h1>
+        <h1 className="text-titleHugeMobile leading-none">
+          Hi! I'm <span className="text-fluoGreen font-display">Giovanna</span>
+        </h1>
         <p className="text-pMd">
           your friendly neighbourhood Web Developer & Designer
         </p>
@@ -25,7 +27,7 @@ export const AboutMobile = () => {
 
       <section className="desc flex flex-col gap-y-6 px-5">
         <div className="bio pb-10">
-          <h3 className="font-display text-title5 text-fluoGreen">Bio</h3>
+          <h3 className="font-display text-title5 text-fluoGreen">About me</h3>
           <p className="text-pMd py-2">
             I'm Giovanna, class 1998, and I'm a creative Developer and Designer.
           </p>

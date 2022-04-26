@@ -1,4 +1,5 @@
 import React from "react"
+import { RoughNotation } from "react-rough-notation"
 
 import { FooterDesktop } from "./FooterDesktop"
 import { ListItemDesktop } from "./ListItemDesktop"
@@ -17,8 +18,17 @@ export const ExperienceDesktop = () => {
       </section>
 
       <section className="work-list flex flex-col px-16 gap-y-12">
-        <h3 className="font-display text-altTitle3 text-fluoGreen">
-          Work Experience
+        <h3 className="font-display text-title3 text-fluoGreen">
+          <RoughNotation
+            type="underline"
+            show={true}
+            strokeWidth={3}
+            iterations={2}
+            color="#4BFFB3"
+            animationDuration={300}
+          >
+            Work Experience
+          </RoughNotation>
         </h3>
         {workExperience.map(({ title, subtitle, description }) => (
           <ListItemDesktop
@@ -31,8 +41,17 @@ export const ExperienceDesktop = () => {
       </section>
 
       <section className="school-list flex flex-col px-16 gap-y-12">
-        <h3 className="font-display text-altTitle3 text-fluoGreen pt-24 ">
-          Education
+        <h3 className="font-display text-title3 text-fluoGreen pt-24 ">
+          <RoughNotation
+            type="underline"
+            show={true}
+            strokeWidth={3}
+            iterations={2}
+            color="#4BFFB3"
+            animationDuration={300}
+          >
+            Education
+          </RoughNotation>
         </h3>
         {schoolExperience.map(({ title, subtitle, description }) => (
           <ListItemDesktop

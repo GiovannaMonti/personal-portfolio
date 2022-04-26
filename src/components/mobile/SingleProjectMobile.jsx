@@ -1,4 +1,5 @@
 import React from "react"
+import { RoughNotation } from "react-rough-notation"
 import { ReactComponent as ArrowBack } from "../../assets/arrow-back.svg"
 import { ReactComponent as ArrowSlanted } from "../../assets/arrow-slanted.svg"
 
@@ -11,18 +12,27 @@ export const SingleProjectMobile = ({
   const project = projects.find(
     (p) => p.slug === selectedProject.replace(/#(?=\S)/g, "")
   )
-  console.log(selectedProject)
 
   return (
     <div className="p-5" style={{ marginTop: "82px" }}>
       <h3
-        className="text-title5 flex items-center gap-x-3 cursor-pointer"
+        className="text-title5 flex items-center gap-x-3 cursor-pointer text-fluoGreen"
         onClick={() => {
           setSelectedProject("")
           window.location.hash = ""
         }}
       >
-        <ArrowBack /> Projects
+        <ArrowBack />{" "}
+        <RoughNotation
+          type="underline"
+          show={true}
+          strokeWidth={4}
+          iterations={2}
+          color="#4BFFB3"
+          animationDuration={300}
+        >
+          Projects
+        </RoughNotation>
       </h3>
 
       <section className="single-project">

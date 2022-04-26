@@ -12,7 +12,9 @@ export const AboutDesktop = () => {
         className="intro flex flex-col gap-y-3 p-16"
         style={{ marginTop: "114.5px" }}
       >
-        <h1 className="text-titleHugeDesktop leading-none">Hi! I'm Giovanna</h1>
+        <h1 className="text-titleHugeDesktop leading-none">
+          Hi! I'm <span className="text-fluoGreen font-display">Giovanna</span>
+        </h1>
         <p className="text-pLg">
           your friendly neighbourhood Web Developer & Designer
         </p>
@@ -36,7 +38,9 @@ export const AboutDesktop = () => {
 
         <div className="desc flex flex-col gap-y-6">
           <div className="bio pb-10">
-            <h3 className="font-display text-altTitle4 text-fluoGreen">Bio</h3>
+            <h3 className="font-display text-altTitle4 text-fluoGreen">
+              About me
+            </h3>
             <p className="text-pLg py-2">
               I'm Giovanna, class 1998, and I'm a creative Developer and
               Designer.

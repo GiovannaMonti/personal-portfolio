@@ -1,4 +1,6 @@
-import React from "react"
+import React, { useState } from "react"
+import { RoughNotation } from "react-rough-notation"
+
 import { ReactComponent as ArrowBack } from "../../assets/arrow-back.svg"
 import { ReactComponent as ArrowSlantedBig } from "../../assets/arrow-slanted-big.svg"
 
@@ -8,6 +10,8 @@ export const SingleProjectDesktop = ({
   selectedProject,
   setSelectedProject,
 }) => {
+  const [hoveredTextId, setHoveredTextId] = useState(null)
+
   const project = projects.find(
     (p) => p.slug === selectedProject.replace(/#(?=\S)/g, "")
   )
@@ -15,13 +19,32 @@ export const SingleProjectDesktop = ({
   return (
     <div className="p-16" style={{ marginTop: "82px" }}>
       <h3
-        className="text-title4 flex items-center gap-x-3 cursor-pointer"
+        className="text-title4 flex items-center gap-x-3 cursor-pointer text-fluoGreen"
         onClick={() => {
           setSelectedProject("")
           window.location.hash = ""
         }}
       >
-        <ArrowBack /> Projects
+        <ArrowBack />
+        <RoughNotation
+          type="underline"
+          show={hoveredTextId === "back"}
+          strokeWidth={4}
+          iterations={2}
+          color="#4BFFB3"
+          animationDuration={300}
+        >
+          <span
+            onMouseOver={() => {
+              setHoveredTextId("back")
+            }}
+            onMouseOut={() => {
+              setHoveredTextId(null)
+            }}
+          >
+            Projects
+          </span>
+        </RoughNotation>
       </h3>
 
       <section className="single-project">
@@ -38,13 +61,15 @@ export const SingleProjectDesktop = ({
                 <h3 className="font-display text-title4 text-fluoGreen">
                   View project
                 </h3>
+
                 <a
                   href={project.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-pLg py-2 flex gap-x-2 items-center"
+                  className="text-pMd py-2 flex gap-x-2 items-center"
                 >
-                  <ArrowSlantedBig /> {project.title}
+                  <ArrowSlantedBig />
+                  {project.title}
                 </a>
               </div>
             )}

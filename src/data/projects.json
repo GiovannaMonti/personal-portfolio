@@ -2,7 +2,7 @@
     {
         "title": "Antonio Testa",
         "slug": "antonio-testa",
-        "subtitle": "Development / Wordpress",
+        "subtitle": "Development",
         "description": "Musician personal website.",
         "category": ["development"],
         "year": 2022,
@@ -15,7 +15,7 @@
     {
         "title": "Bloom App",
         "slug": "bloom",
-        "subtitle": "UX/UI Design / Figma",
+        "subtitle": "UX/UI Design",
         "description": "Condominium management app UI/UX design.",
         "category": ["design"],
         "year": 2022,
@@ -28,13 +28,26 @@
     {
         "title": "Mousse",
         "slug": "mousse",
-        "subtitle": "Design & Development / Figma, Wordpress",
+        "subtitle": "Design & Development",
         "description": "Design and development of sustainable palm oil e-commerce.",
         "category": ["design", "development"],
         "year": 2021,
         "src": "mousse.png",
         "alt": "mousse",
         "link": "",
+        "tools": "Figma, Wordpress",
+        "team": "Giovanna Monti"
+    },
+    {
+        "title": "Maison du Silence",
+        "slug": "maison-du-silence",
+        "subtitle": "Design & Development",
+        "description": "Design and development of sustainable palm oil e-commerce.",
+        "category": ["design", "development"],
+        "year": 2021,
+        "src": "maison-compressed-preview.png",
+        "alt": "maison du silence",
+        "link": "https://www.maisondusilence.chichomesitaly.com/",
         "tools": "Figma, Wordpress",
         "team": "Giovanna Monti"
     }
