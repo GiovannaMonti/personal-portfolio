@@ -1,4 +1,8 @@
-import React from "react"
+import React, { useState, useRef, useEffect } from "react"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { RoughNotation } from "react-rough-notation"
+
 import { ReactComponent as ArrowBack } from "../../assets/arrow-back.svg"
 import { ReactComponent as ArrowSlantedBig } from "../../assets/arrow-slanted-big.svg"
 
@@ -8,73 +12,102 @@ export const SingleProjectDesktop = ({
   selectedProject,
   setSelectedProject,
 }) => {
+  const [hoveredTextId, setHoveredTextId] = useState(null)
+
   const project = projects.find(
     (p) => p.slug === selectedProject.replace(/#(?=\S)/g, "")
   )
 
+  gsap.registerPlugin(ScrollTrigger)
+
+  const scrollSingle = useRef([])
+
+  useEffect(() => {
+    gsap.from(scrollSingle.current, {
+      yPercent: 10,
+      opacity: 0,
+      stagger: scrollSingle.current.length * 0.05,
+    })
+  }, [])
+
   return (
     <div className="p-16" style={{ marginTop: "82px" }}>
       <h3
-        className="text-title4 flex items-center gap-x-3 cursor-pointer"
+        className="text-title4 flex items-center gap-x-3 cursor-pointer text-fluoGreen"
         onClick={() => {
           setSelectedProject("")
           window.location.hash = ""
         }}
       >
-        <ArrowBack /> Projects
+        <ArrowBack />
+        <RoughNotation
+          type="underline"
+          show={hoveredTextId === "back"}
+          strokeWidth={4}
+          iterations={2}
+          color="#4BFFB3"
+          animationDuration={300}
+        >
+          <span
+            onMouseOver={() => {
+              setHoveredTextId("back")
+            }}
+            onMouseOut={() => {
+              setHoveredTextId(null)
+            }}
+          >
+            Projects
+          </span>
+        </RoughNotation>
       </h3>
 
       <section className="single-project">
         <h1 className="text-altTitle1 pt-8">{project.title}</h1>
 
-        <h3 className="subtitle text-title4 text-softGreen pb-16">
+        <h3 className="subtitle text-title6 text-softGreen pb-16">
           {project.year} - {project.subtitle}
         </h3>
 
-        <div className="grid grid-cols-singleProject gap-x-12">
+        <div
+          className="grid grid-cols-singleProject gap-x-12"
+          ref={(element) => scrollSingle.current.push(element)}
+        >
           <section className="desc flex flex-col gap-y-12">
             {project.link && (
-              <div>
-                <h3 className="font-marker text-title4">View project</h3>
+              <div ref={(element) => scrollSingle.current.push(element)}>
+                <h3 className="font-display text-title4 text-fluoGreen">
+                  View project
+                </h3>
+
                 <a
                   href={project.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-pLg py-2 flex gap-x-2 items-center text-fluoGreen"
+                  className="text-pMd py-2 flex gap-x-2 items-center"
                 >
-                  <ArrowSlantedBig /> {project.title}
+                  <ArrowSlantedBig />
+                  {project.title}
                 </a>
               </div>
             )}
 
-            <div className="description">
-              <h3 className="font-marker text-title4">Description</h3>
-              <p className="text-pLg py-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea,
-                temporibus!
-              </p>
-              <p className="text-pLg py-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-                laboriosam exercitationem beatae ipsam asperiores aliquam
-                provident odio delectus recusandae esse. Illum, expedita quis!
-              </p>
-              <p className="text-pLg py-2">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Recusandae deserunt, quis harum qui rem voluptate.
-              </p>
-              <p className="text-pLg py-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-                atque culpa repellat? Perspiciatis, enim culpa? Odio, alias.
-              </p>
+            <div
+              className="description"
+              ref={(element) => scrollSingle.current.push(element)}
+            >
+              <h3 className="font-display text-title4 text-fluoGreen">
+                Description
+              </h3>
+              <p className="text-pLg py-2">{project.longDescription}</p>
             </div>
 
             <div>
-              <h3 className="font-marker text-title4">Tools</h3>
+              <h3 className="font-display text-title4 text-fluoGreen">Tools</h3>
               <p className="text-pLg py-2">{project.tools}</p>
             </div>
 
             <div>
-              <h3 className="font-marker text-title4">Team</h3>
+              <h3 className="font-display text-title4 text-fluoGreen">Team</h3>
               <p className="text-pLg py-2">{project.team}</p>
             </div>
           </section>

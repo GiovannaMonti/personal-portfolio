@@ -12,7 +12,9 @@ export const AboutMobile = () => {
         className="intro flex flex-col gap-y-6 px-5 py-16"
         style={{ marginTop: "82px" }}
       >
-        <h1 className="text-titleHugeMobile leading-none">Hi! I'm Giovanna</h1>
+        <h1 className="text-titleHugeMobile leading-none">
+          Hi! I'm <span className="text-fluoGreen font-display">Giovanna</span>
+        </h1>
         <p className="text-pMd">
           your friendly neighbourhood Web Developer & Designer
         </p>
@@ -25,7 +27,7 @@ export const AboutMobile = () => {
 
       <section className="desc flex flex-col gap-y-6 px-5">
         <div className="bio pb-10">
-          <h3 className="font-marker text-title5">Bio</h3>
+          <h3 className="font-display text-title5 text-fluoGreen">About me</h3>
           <p className="text-pMd py-2">
             I'm Giovanna, class 1998, and I'm a creative Developer and Designer.
           </p>
@@ -45,7 +47,9 @@ export const AboutMobile = () => {
         </div>
 
         <div className="interests">
-          <h3 className="font-marker text-title5">Background + Interests</h3>
+          <h3 className="font-display text-title5 text-fluoGreen">
+            Background + Interests
+          </h3>
           <p className="text-pMd py-2">
             I achieved a bachelor's degree in{" "}
             <a
@@ -91,7 +95,9 @@ export const AboutMobile = () => {
       </section>
 
       <section className="contact flex flex-col items-center gap-y-8 py-24">
-        <h3 className="font-marker text-title5 self-center">Get in touch</h3>
+        <h3 className="font-display text-title5 self-center text-fluoGreen">
+          Get in touch
+        </h3>
         <div className="e-mail flex gap-x-1 items-center">
           <ArrowSlanted className="inline" />
           <a

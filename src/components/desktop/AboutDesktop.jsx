@@ -1,4 +1,6 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 import { ReactComponent as DonwloadIcon } from "../../assets/icon-download.svg"
 import { ReactComponent as ArrowSlantedBig } from "../../assets/arrow-slanted-big.svg"
@@ -6,13 +8,27 @@ import { ReactComponent as ArrowSlantedBig } from "../../assets/arrow-slanted-bi
 import { FooterDesktop } from "./FooterDesktop"
 
 export const AboutDesktop = () => {
+  gsap.registerPlugin(ScrollTrigger)
+
+  const scrollAbout = useRef([])
+
+  useEffect(() => {
+    gsap.from(scrollAbout.current, {
+      yPercent: 10,
+      opacity: 0,
+      stagger: scrollAbout.current.length * 0.03,
+    })
+  }, [])
+
   return (
     <>
       <section
         className="intro flex flex-col gap-y-3 p-16"
         style={{ marginTop: "114.5px" }}
       >
-        <h1 className="text-titleHugeDesktop leading-none">Hi! I'm Giovanna</h1>
+        <h1 className="text-titleHugeDesktop leading-none">
+          Hi! I'm <span className="text-fluoGreen font-display">Giovanna</span>
+        </h1>
         <p className="text-pLg">
           your friendly neighbourhood Web Developer & Designer
         </p>
@@ -21,11 +37,13 @@ export const AboutDesktop = () => {
       <section className="p-16 flex gap-x-12">
         <div className="photo flex flex-col gap-y-6 text-pLg">
           <img
+            ref={(element) => scrollAbout.current.push(element)}
             src="img/giovanna-accurat-1.png"
             alt="portrait of me"
             className="min-w-[35vw]"
           />
           <a
+            ref={(element) => scrollAbout.current.push(element)}
             href="#"
             className="font-button text-linkMd flex items-center gap-x-2"
           >
@@ -34,9 +52,14 @@ export const AboutDesktop = () => {
           </a>
         </div>
 
-        <div className="desc flex flex-col gap-y-6">
+        <div
+          className="desc flex flex-col gap-y-6"
+          ref={(element) => scrollAbout.current.push(element)}
+        >
           <div className="bio pb-10">
-            <h3 className="font-marker text-altTitle4">Bio</h3>
+            <h3 className="font-display text-altTitle4 text-fluoGreen">
+              About me
+            </h3>
             <p className="text-pLg py-2">
               I'm Giovanna, class 1998, and I'm a creative Developer and
               Designer.
@@ -57,7 +80,7 @@ export const AboutDesktop = () => {
           </div>
 
           <div className="interests">
-            <h3 className="font-marker text-altTitle4">
+            <h3 className="font-display text-altTitle4 text-fluoGreen">
               Background + Interests
             </h3>
             <p className="text-pLg py-2">
@@ -104,7 +127,9 @@ export const AboutDesktop = () => {
           </div>
 
           <div className="contact flex flex-col gap-y-12">
-            <h3 className="font-marker text-altTitle4 mt-12">Contact Me</h3>
+            <h3 className="font-display text-altTitle4 mt-12 text-fluoGreen">
+              Get in touch
+            </h3>
             <div className="e-mail flex gap-x-1 items-center">
               <ArrowSlantedBig className="inline" />
               <a

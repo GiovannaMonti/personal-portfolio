@@ -23,7 +23,7 @@ export const App = () => {
         }}
         code={["8", "0", "0", "8", "5"]}
       >
-        <div className="absolute overflow-hidden top-0 left-0 w-full h-full flex items-center justify-center">
+        <div className="absolute z-[999] overflow-hidden top-0 left-0 w-full h-full flex items-center justify-center">
           <img
             className="h-full w-auto p-12 animate-popup"
             src="img/Rick.png"
@@ -37,6 +37,7 @@ export const App = () => {
       ) : (
         <MenuDesktop location={location} />
       )}
+
       <div id="page-content">
         <Outlet context={isMobile} />
       </div>
