@@ -35,6 +35,9 @@ export const HomeDesktop = () => {
   const scrollSoftSkills = useRef([])
   const scrollSoftSkillsParent = useRef()
 
+  const scrollAbout = useRef([])
+  const scrollAboutParent = useRef()
+
   const skillsGroupedByLevel = reverse(Object.values(groupBy(skills, "level")))
 
   useEffect(() => {
@@ -52,12 +55,12 @@ export const HomeDesktop = () => {
       opacity: 0,
       stagger: scrollProjects.current.length * 0.03,
       scrollTrigger: {
-        end: "top",
+        start: "bottom",
         trigger: scrollProjectsParent.current,
-        scrub: 0.7, // l'animazione è legata e segue la scrollbar
       },
     })
   }, [])
+
   useEffect(() => {
     gsap.from(scrollProjectsDesc.current, {
       opacity: 0,
@@ -65,7 +68,6 @@ export const HomeDesktop = () => {
       scrollTrigger: {
         end: "top",
         trigger: scrollProjectsDescParent.current,
-        scrub: 1, // l'animazione è legata e segue la scrollbar
       },
     })
   }, [])
@@ -74,11 +76,10 @@ export const HomeDesktop = () => {
     gsap.from(scrollHardSkills.current, {
       yPercent: 20,
       opacity: 0,
-      stagger: scrollHardSkills.current.length * 0.03,
+      stagger: scrollHardSkills.current.length * 0.004,
       scrollTrigger: {
         trigger: scrollHardSkillsParent.current,
         end: "bottom",
-        scrub: 3, // l'animazione è legata e segue la scrollbar
       },
     })
   }, [])
@@ -93,6 +94,18 @@ export const HomeDesktop = () => {
       scrollTrigger: {
         trigger: scrollSoftSkillsParent.current,
         scrub: 0.5, // l'animazione è legata e segue la scrollbar
+      },
+    })
+  }, [])
+
+  useEffect(() => {
+    gsap.from(scrollAbout.current, {
+      yPercent: 10,
+      opacity: 0,
+      stagger: scrollAbout.current.length * 0.03,
+      scrollTrigger: {
+        start: "top",
+        trigger: scrollAboutParent.current,
       },
     })
   }, [])
@@ -165,7 +178,9 @@ export const HomeDesktop = () => {
         </div>
 
         <div className="scroll-down self-center flex flex-col items-center gap-y-4">
-          <span className="text-title6">SCROLL DOWN</span>
+          <span className="text-title6" ref={scrollProjectsParent}>
+            SCROLL DOWN
+          </span>
 
           <ArrowDown className="animate-bounce-smooth" />
         </div>
@@ -173,7 +188,7 @@ export const HomeDesktop = () => {
 
       <section className="project-highlights grid grid-cols-about gap-x-12 px-16">
         <h3
-          ref={scrollProjectsParent}
+          ref={(element) => scrollProjects.current.push(element)}
           className="font-display text-altTitle1 text-fluoGreen"
           style={{
             textOrientation: "upright",
@@ -281,7 +296,6 @@ export const HomeDesktop = () => {
                 animationDuration={500}
               >
                 <span
-                  ref={scrollHardSkillsParent}
                   className="description text-pLg"
                   style={
                     hoveredTextId === "maison" ? { color: "#000000" } : null
@@ -301,7 +315,7 @@ export const HomeDesktop = () => {
           Hard Skills
         </h3>
 
-        <div className="legend py-10 self-end">
+        <div className="legend py-10 self-end" ref={scrollHardSkillsParent}>
           <div className="flex gap-x-5 items-center justify-end">
             <div className="flex gap-x-2">
               {[...Array(4)].map((dot, index) => (
@@ -396,8 +410,12 @@ export const HomeDesktop = () => {
         </div>
       </section>
 
-      <section className="about grid grid-cols-about gap-x-12 px-16">
+      <section
+        className="about grid grid-cols-about gap-x-12 px-16"
+        ref={scrollAboutParent}
+      >
         <h3
+          ref={(element) => scrollAbout.current.push(element)}
           className="font-display text-altTitle1 text-fluoGreen"
           style={{
             textOrientation: "upright",
@@ -409,6 +427,7 @@ export const HomeDesktop = () => {
 
         <div className="photo-and-bio flex flex-col gap-y-16 text-pLg">
           <img
+            ref={(element) => scrollAbout.current.push(element)}
             style={{ width: "55%" }}
             src={
               isHoveringImg
@@ -421,6 +440,7 @@ export const HomeDesktop = () => {
           />
           <div className="description flex gap-x-16">
             <div
+              ref={(element) => scrollAbout.current.push(element)}
               className="bio flex flex-col gap-y-10"
               style={{ width: "55%" }}
             >
@@ -439,7 +459,10 @@ export const HomeDesktop = () => {
                 leo nunc.
               </p>
 
-              <div className="contact flex flex-col gap-y-12">
+              <div
+                className="contact flex flex-col gap-y-12"
+                ref={(element) => scrollAbout.current.push(element)}
+              >
                 <h3 className="font-display text-altTitle4 mt-12 text-fluoGreen">
                   Contact Me
                 </h3>
@@ -471,7 +494,10 @@ export const HomeDesktop = () => {
               </div>
             </div>
 
-            <div className="links flex flex-col gap-y-3">
+            <div
+              className="links flex flex-col gap-y-3"
+              ref={(element) => scrollAbout.current.push(element)}
+            >
               <RoughNotation
                 type="circle"
                 show={hoveredTextId === "about"}
