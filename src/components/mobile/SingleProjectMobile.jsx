@@ -42,7 +42,23 @@ export const SingleProjectMobile = ({
           {project.year} - {project.subtitle}
         </h3>
 
-        <img src={`img/${project.src}`} alt={project.alt} className="py-12" />
+        {project.src && (
+          <div className="py-12 w-full flex justify-center">
+            <RoughNotation
+              type="box"
+              show={true}
+              strokeWidth={3}
+              iterations={2}
+              color="#4BFFB3"
+            >
+              <img
+                className="max-h-[500px]"
+                src={`img/${project.src}`}
+                alt={project.alt}
+              />
+            </RoughNotation>
+          </div>
+        )}
 
         <section className="desc flex flex-col gap-y-12">
           {project.link && (

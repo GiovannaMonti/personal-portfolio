@@ -204,12 +204,22 @@ export const HomeDesktop = () => {
               ref={(element) => scrollProjects.current.push(element)}
               className="project-teaser py-10 flex gap-x-14 items-center"
             >
-              <img
-                ref={scrollProjectsDescParent}
-                style={{ width: "35%" }}
-                src="img/bloom-preview.png"
-                alt="bloom app"
-              />
+              <RoughNotation
+                style={{ width: "40%" }}
+                className="justify-self-center ml-5"
+                type="box"
+                show={true}
+                strokeWidth={3}
+                iterations={3}
+                color="#4BFFB3"
+              >
+                <img
+                  className="p-2"
+                  ref={scrollProjectsDescParent}
+                  src="img/bloom-preview.png"
+                  alt="bloom app"
+                />
+              </RoughNotation>
 
               <div
                 className="project-details"
@@ -263,11 +273,22 @@ export const HomeDesktop = () => {
               ref={(element) => scrollProjects.current.push(element)}
               className="project-teaser py-10 flex gap-x-14 items-center"
             >
-              <img
-                style={{ width: "35%" }}
-                src="img/maison-compressed-preview.png"
-                alt="maison du silence website"
-              />
+              <RoughNotation
+                style={{ width: "40%" }}
+                className="justify-self-center ml-5"
+                type="box"
+                show={true}
+                strokeWidth={3}
+                iterations={3}
+                color="#4BFFB3"
+              >
+                <img
+                  className="p-2"
+                  src="img/maison-compressed-preview.png"
+                  alt="maison du silence website"
+                />
+              </RoughNotation>
+
               <div
                 className="project-details"
                 ref={(element) => scrollProjectsDesc.current.push(element)}
