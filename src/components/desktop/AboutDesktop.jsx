@@ -84,11 +84,6 @@ export const AboutDesktop = () => {
               Designer.
             </p>
             <p className="text-pLg py-2">
-              Empathetic, straightforward and assertive, I'm a grounded
-              perfectionist, always in search of the right balance between
-              feasibility and elegance.
-            </p>
-            <p className="text-pLg py-2">
               I listen to weird music, I love pc gaming and I like facing every
               challenge with enthusiasm and curiosity.
             </p>

@@ -242,6 +242,7 @@ export const HomeDesktop = () => {
                 </h2>
 
                 <RoughNotation
+                  style={{ minWidth: "40%" }}
                   type="highlight"
                   multiline={true}
                   show={hoveredTextId === "bloom"}
@@ -256,8 +257,7 @@ export const HomeDesktop = () => {
                       hoveredTextId === "bloom" ? { color: "#000000" } : null
                     }
                   >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Amet tellus interdum integer ut.
+                    Condominium management app UI/UX design.
                   </span>
                 </RoughNotation>
               </div>
@@ -274,7 +274,7 @@ export const HomeDesktop = () => {
               className="project-teaser py-10 flex gap-x-14 items-center"
             >
               <RoughNotation
-                style={{ width: "40%" }}
+                style={{ minWidth: "40%" }}
                 className="justify-self-center ml-5"
                 type="box"
                 show={true}
@@ -323,8 +323,8 @@ export const HomeDesktop = () => {
                       hoveredTextId === "maison" ? { color: "#000000" } : null
                     }
                   >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Amet tellus interdum integer ut.
+                    Design and development of a Wordpress custom theme for a
+                    holiday home website.
                   </span>
                 </RoughNotation>
               </div>
@@ -467,18 +467,16 @@ export const HomeDesktop = () => {
                 style={{ width: "55%" }}
               >
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Pulvinar leo, ut ut et dictum bibendum pretium ipsum quis.
+                  Hi, I'm Giovanna, a creative Developer and Designer. <br />{" "}
+                  Empathetic, straightforward and assertive, I'm a grounded
+                  perfectionist, always in search of the right balance between
+                  feasibility and elegance.
                 </p>
                 <p>
-                  Adipiscing lectus nec cursus ullamcorper sit urna, et
-                  volutpat. Aliquam at ut lectus semper eget.
-                </p>
-                <p>
-                  Nibh fringilla habitant bibendum hendrerit leo nunc. Auctor
-                  nunc sit nunc sed integer orci vel velit facilisis. Aliquam at
-                  ut lectus semper eget. Nibh fringilla habitant bibendum
-                  hendrerit leo nunc.
+                  I'm interested in all areas of web and app development (I like
+                  learning new stuff!), but my favourite projects are the ones
+                  that aim for a combination of both functionality and
+                  aesthetics.
                 </p>
 
                 <div
