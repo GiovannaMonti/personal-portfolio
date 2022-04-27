@@ -112,7 +112,22 @@ export const SingleProjectDesktop = ({
             </div>
           </section>
 
-          <img src={`img/${project.src}`} alt={project.alt} />
+          {project.src && (
+            <RoughNotation
+              className="w-fit h-fit justify-self-center "
+              type="box"
+              show={true}
+              strokeWidth={3}
+              iterations={3}
+              color="#4BFFB3"
+            >
+              <img
+                className="max-h-[600px] p-5"
+                src={`img/${project.src}`}
+                alt={project.alt}
+              />
+            </RoughNotation>
+          )}
         </div>
       </section>
     </div>

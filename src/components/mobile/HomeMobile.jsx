@@ -92,7 +92,17 @@ export const HomeMobile = () => {
         </h3>
 
         <div className="project-teaser px-5 py-10 flex flex-col gap-y-4">
-          <img src="img/bloom-preview.png" alt="bloom app" />
+          <RoughNotation
+            className="justify-self-center mb-3"
+            type="box"
+            show={true}
+            strokeWidth={2}
+            iterations={3}
+            color="#4BFFB3"
+          >
+            <img src="img/bloom-preview.png" alt="bloom app" />
+          </RoughNotation>
+
           <div className="project-details">
             <h2
               className="title flex gap-x-3 items-center text-title4"
@@ -111,10 +121,19 @@ export const HomeMobile = () => {
         </div>
 
         <div className="project-teaser px-5 py-10 flex flex-col gap-y-4">
-          <img
-            src="img/maison-compressed-preview.png"
-            alt="maison du silence website"
-          />
+          <RoughNotation
+            className="justify-self-center mb-3"
+            type="box"
+            show={true}
+            strokeWidth={2}
+            iterations={3}
+            color="#4BFFB3"
+          >
+            <img
+              src="img/maison-compressed-preview.png"
+              alt="maison du silence website"
+            />
+          </RoughNotation>
 
           <div className="project-details">
             <h2
