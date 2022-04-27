@@ -65,23 +65,7 @@ export const SingleProjectMobile = ({
             <h3 className="font-display text-title5 text-fluoGreen">
               Description
             </h3>
-            <p className="text-pMd py-2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea,
-              temporibus!
-            </p>
-            <p className="text-pMd py-2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-              laboriosam exercitationem beatae ipsam asperiores aliquam
-              provident odio delectus recusandae esse. Illum, expedita quis!
-            </p>
-            <p className="text-pMd py-2">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Recusandae deserunt, quis harum qui rem voluptate.
-            </p>
-            <p className="text-pMd py-2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-              atque culpa repellat? Perspiciatis, enim culpa? Odio, alias.
-            </p>
+            <p className="text-pMd py-2">{project.longDescription}</p>
           </div>
 
           <div>
