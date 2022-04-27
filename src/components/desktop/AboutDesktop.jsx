@@ -1,4 +1,6 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 import { ReactComponent as DonwloadIcon } from "../../assets/icon-download.svg"
 import { ReactComponent as ArrowSlantedBig } from "../../assets/arrow-slanted-big.svg"
@@ -6,6 +8,18 @@ import { ReactComponent as ArrowSlantedBig } from "../../assets/arrow-slanted-bi
 import { FooterDesktop } from "./FooterDesktop"
 
 export const AboutDesktop = () => {
+  gsap.registerPlugin(ScrollTrigger)
+
+  const scrollAbout = useRef([])
+
+  useEffect(() => {
+    gsap.from(scrollAbout.current, {
+      yPercent: 10,
+      opacity: 0,
+      stagger: scrollAbout.current.length * 0.03,
+    })
+  }, [])
+
   return (
     <>
       <section
@@ -23,11 +37,13 @@ export const AboutDesktop = () => {
       <section className="p-16 flex gap-x-12">
         <div className="photo flex flex-col gap-y-6 text-pLg">
           <img
+            ref={(element) => scrollAbout.current.push(element)}
             src="img/giovanna-accurat-1.png"
             alt="portrait of me"
             className="min-w-[35vw]"
           />
           <a
+            ref={(element) => scrollAbout.current.push(element)}
             href="#"
             className="font-button text-linkMd flex items-center gap-x-2"
           >
@@ -36,7 +52,10 @@ export const AboutDesktop = () => {
           </a>
         </div>
 
-        <div className="desc flex flex-col gap-y-6">
+        <div
+          className="desc flex flex-col gap-y-6"
+          ref={(element) => scrollAbout.current.push(element)}
+        >
           <div className="bio pb-10">
             <h3 className="font-display text-altTitle4 text-fluoGreen">
               About me

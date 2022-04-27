@@ -1,4 +1,6 @@
-import React, { useState } from "react"
+import React, { useState, useRef, useEffect } from "react"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { RoughNotation } from "react-rough-notation"
 
 import { ReactComponent as ArrowBack } from "../../assets/arrow-back.svg"
@@ -15,6 +17,18 @@ export const SingleProjectDesktop = ({
   const project = projects.find(
     (p) => p.slug === selectedProject.replace(/#(?=\S)/g, "")
   )
+
+  gsap.registerPlugin(ScrollTrigger)
+
+  const scrollSingle = useRef([])
+
+  useEffect(() => {
+    gsap.from(scrollSingle.current, {
+      yPercent: 10,
+      opacity: 0,
+      stagger: scrollSingle.current.length * 0.03,
+    })
+  }, [])
 
   return (
     <div className="p-16" style={{ marginTop: "82px" }}>
@@ -54,10 +68,13 @@ export const SingleProjectDesktop = ({
           {project.year} - {project.subtitle}
         </h3>
 
-        <div className="grid grid-cols-singleProject gap-x-12">
+        <div
+          className="grid grid-cols-singleProject gap-x-12"
+          ref={(element) => scrollSingle.current.push(element)}
+        >
           <section className="desc flex flex-col gap-y-12">
             {project.link && (
-              <div>
+              <div ref={(element) => scrollSingle.current.push(element)}>
                 <h3 className="font-display text-title4 text-fluoGreen">
                   View project
                 </h3>
@@ -74,7 +91,10 @@ export const SingleProjectDesktop = ({
               </div>
             )}
 
-            <div className="description">
+            <div
+              className="description"
+              ref={(element) => scrollSingle.current.push(element)}
+            >
               <h3 className="font-display text-title4 text-fluoGreen">
                 Description
               </h3>

@@ -37,6 +37,7 @@ export const App = () => {
       ) : (
         <MenuDesktop location={location} />
       )}
+
       <div id="page-content">
         <Outlet context={isMobile} />
       </div>

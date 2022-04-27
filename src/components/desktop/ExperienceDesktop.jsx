@@ -1,5 +1,7 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import { RoughNotation } from "react-rough-notation"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 import { FooterDesktop } from "./FooterDesktop"
 import { ListItemDesktop } from "./ListItemDesktop"
@@ -8,6 +10,17 @@ import schoolExperience from "../../data/schoolExperience.json"
 import workExperience from "../../data/workExperience.json"
 
 export const ExperienceDesktop = () => {
+  gsap.registerPlugin(ScrollTrigger)
+
+  const scrollExp = useRef([])
+
+  useEffect(() => {
+    gsap.from(scrollExp.current, {
+      xPercent: 50,
+      opacity: 0,
+      stagger: scrollExp.current.length * 0.03,
+    })
+  }, [])
   return (
     <>
       <section
@@ -17,7 +30,7 @@ export const ExperienceDesktop = () => {
         <h1 className="text-titleHugeDesktop leading-none">Experience</h1>
       </section>
 
-      <section className="work-list flex flex-col px-16 gap-y-12">
+      <section className="work-list flex flex-col px-16 gap-y-12 overflow-hidden">
         <h3 className="font-display text-title3 text-fluoGreen">
           <RoughNotation
             type="underline"
@@ -31,16 +44,18 @@ export const ExperienceDesktop = () => {
           </RoughNotation>
         </h3>
         {workExperience.map(({ title, subtitle, description }) => (
-          <ListItemDesktop
-            key={title}
-            title={title}
-            subtitle={subtitle}
-            description={description}
-          />
+          <div ref={(element) => scrollExp.current.push(element)}>
+            <ListItemDesktop
+              key={title}
+              title={title}
+              subtitle={subtitle}
+              description={description}
+            />
+          </div>
         ))}
       </section>
 
-      <section className="school-list flex flex-col px-16 gap-y-12">
+      <section className="school-list flex flex-col px-16 gap-y-12 overflow-hidden">
         <h3 className="font-display text-title3 text-fluoGreen pt-24 ">
           <RoughNotation
             type="underline"
@@ -54,12 +69,14 @@ export const ExperienceDesktop = () => {
           </RoughNotation>
         </h3>
         {schoolExperience.map(({ title, subtitle, description }) => (
-          <ListItemDesktop
-            key={title}
-            title={title}
-            subtitle={subtitle}
-            description={description}
-          />
+          <div ref={(element) => scrollExp.current.push(element)}>
+            <ListItemDesktop
+              key={title}
+              title={title}
+              subtitle={subtitle}
+              description={description}
+            />
+          </div>
         ))}
       </section>
 

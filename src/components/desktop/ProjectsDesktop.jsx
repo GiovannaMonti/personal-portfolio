@@ -1,5 +1,7 @@
-import React, { useState } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import { RoughNotation } from "react-rough-notation"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 import { FooterDesktop } from "./FooterDesktop"
 import { ListItemDesktop } from "./ListItemDesktop"
@@ -11,6 +13,18 @@ export const ProjectsDesktop = () => {
   const [filteredProjects, setFilteredProjects] = useState(projects)
   const [isActiveTab, setIsActiveTab] = useState("all")
   const [selectedProject, setSelectedProject] = useState(window.location.hash)
+
+  gsap.registerPlugin(ScrollTrigger)
+
+  const scrollProj = useRef([])
+
+  useEffect(() => {
+    gsap.from(scrollProj.current, {
+      xPercent: 50,
+      opacity: 0,
+      stagger: scrollProj.current.length * 0.03,
+    })
+  }, [])
 
   return (
     <>
@@ -92,19 +106,21 @@ export const ProjectsDesktop = () => {
             </div>
           </section>
 
-          <section className="projects-list flex flex-col px-16 gap-y-8">
+          <section className="projects-list flex flex-col px-16 gap-y-8 overflow-hidden">
             {filteredProjects.map(
               ({ title, slug, subtitle, description, year }) => (
-                <ListItemDesktop
-                  key={title}
-                  title={title}
-                  slug={slug}
-                  year={year}
-                  subtitle={subtitle}
-                  description={description}
-                  setSelectedProject={setSelectedProject}
-                  isClickable={true}
-                />
+                <div ref={(element) => scrollProj.current.push(element)}>
+                  <ListItemDesktop
+                    key={title}
+                    title={title}
+                    slug={slug}
+                    year={year}
+                    subtitle={subtitle}
+                    description={description}
+                    setSelectedProject={setSelectedProject}
+                    isClickable={true}
+                  />
+                </div>
               )
             )}
           </section>
