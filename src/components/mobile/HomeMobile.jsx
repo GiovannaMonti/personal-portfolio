@@ -114,8 +114,7 @@ export const HomeMobile = () => {
               Bloom App | 2022
             </h2>
             <p className="description text-pSm">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet
-              tellus interdum integer ut.
+              Condominium management app UI/UX design.
             </p>
           </div>
         </div>
@@ -146,8 +145,8 @@ export const HomeMobile = () => {
               Maison du Silence | 2021
             </h2>
             <p className="description text-pSm">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet
-              tellus interdum integer ut.
+              Design and development of a Wordpress custom theme for a holiday
+              home website.
             </p>
           </div>
         </div>
@@ -259,12 +258,16 @@ export const HomeMobile = () => {
           onMouseEnter={() => setIsHoveringImage(true)}
           onMouseLeave={() => setIsHoveringImage(false)}
         />
-        <p className="short-bio text-pMd">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar leo,
-          ut ut et dictum bibendum pretium ipsum quis. Adipiscing lectus nec
-          cursus ullamcorper sit urna, et volutpat. Aliquam at ut lectus semper
-          eget. Nibh fringilla habitant bibendum hendrerit leo nunc. Auctor nunc
-          sit nunc sed integer orci vel velit facilisis.
+        <p className="text-pMd">
+          Hi, I'm Giovanna, a creative Developer and Designer. <br />{" "}
+          Empathetic, straightforward and assertive, I'm a grounded
+          perfectionist, always in search of the right balance between
+          feasibility and elegance.
+        </p>
+        <p className="text-pMd">
+          I'm interested in all areas of web and app development (I like
+          learning new stuff!), but my favourite projects are the ones that aim
+          for a combination of both functionality and aesthetics.
         </p>
         <div className="links flex flex-col gap-y-3">
           <span className="flex gap-x-3 items-center text-title4 font-display">
