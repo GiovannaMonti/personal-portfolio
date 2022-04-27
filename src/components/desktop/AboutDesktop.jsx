@@ -1,6 +1,7 @@
-import React, { useRef, useEffect } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { RoughNotation } from "react-rough-notation"
 
 import { ReactComponent as DonwloadIcon } from "../../assets/icon-download.svg"
 import { ReactComponent as ArrowSlantedBig } from "../../assets/arrow-slanted-big.svg"
@@ -8,6 +9,8 @@ import { ReactComponent as ArrowSlantedBig } from "../../assets/arrow-slanted-bi
 import { FooterDesktop } from "./FooterDesktop"
 
 export const AboutDesktop = () => {
+  const [hoveredTextId, setHoveredTextId] = useState(null)
+
   gsap.registerPlugin(ScrollTrigger)
 
   const scrollAbout = useRef([])
@@ -42,13 +45,29 @@ export const AboutDesktop = () => {
             alt="portrait of me"
             className="min-w-[35vw]"
           />
+
           <a
             ref={(element) => scrollAbout.current.push(element)}
             href="#"
-            className="font-button text-linkMd flex items-center gap-x-2"
+            className="font-button text-linkSm flex items-center gap-x-2"
           >
             <DonwloadIcon />
-            download my CV
+            <RoughNotation
+              type="underline"
+              show={hoveredTextId === "cv"}
+              strokeWidth={3}
+              iterations={2}
+              color="#4BFFB3"
+              animationDuration={300}
+              onMouseOver={() => {
+                setHoveredTextId("cv")
+              }}
+              onMouseOut={() => {
+                setHoveredTextId(null)
+              }}
+            >
+              download my CV
+            </RoughNotation>
           </a>
         </div>
 
@@ -136,7 +155,22 @@ export const AboutDesktop = () => {
                 href="mailto:giovannamontidev@gmail.com"
                 className="font-body text-pLg"
               >
-                giovannamontidev@gmail.com
+                <RoughNotation
+                  type="underline"
+                  show={hoveredTextId === "mail"}
+                  strokeWidth={3}
+                  iterations={2}
+                  color="#4BFFB3"
+                  animationDuration={300}
+                  onMouseOver={() => {
+                    setHoveredTextId("mail")
+                  }}
+                  onMouseOut={() => {
+                    setHoveredTextId(null)
+                  }}
+                >
+                  giovannamontidev@gmail.com
+                </RoughNotation>
               </a>
             </div>
           </div>

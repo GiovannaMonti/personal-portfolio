@@ -1,4 +1,5 @@
 import React from "react"
+import { RoughNotation } from "react-rough-notation"
 
 import { ReactComponent as DonwloadIcon } from "../../assets/icon-download.svg"
 import { ReactComponent as ArrowSlanted } from "../../assets/arrow-slanted.svg"
@@ -21,7 +22,16 @@ export const AboutMobile = () => {
         <img src="img/giovanna-accurat-1.png" alt="portrait of me" />
         <a href="#" className="font-button text-btnTextSm flex gap-x-2">
           <DonwloadIcon />
-          download my CV
+          <RoughNotation
+            type="underline"
+            show={true}
+            strokeWidth={3}
+            iterations={2}
+            color="#4BFFB3"
+            animationDuration={300}
+          >
+            download my CV
+          </RoughNotation>
         </a>
       </section>
 
@@ -104,7 +114,16 @@ export const AboutMobile = () => {
             href="mailto:giovannamontidev@gmail.com"
             className="font-body text-pMd"
           >
-            giovannamontidev@gmail.com
+            <RoughNotation
+              type="underline"
+              show={true}
+              strokeWidth={3}
+              iterations={2}
+              color="#4BFFB3"
+              animationDuration={300}
+            >
+              giovannamontidev@gmail.com
+            </RoughNotation>
           </a>
         </div>
       </section>

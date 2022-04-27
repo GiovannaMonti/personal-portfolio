@@ -27,7 +27,7 @@ export const particlesConfig = {
       straight: false,
     },
     number: {
-      value: 35,
+      value: 40,
     },
     shape: {
       type: "circle",
