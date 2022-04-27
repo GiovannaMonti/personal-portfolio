@@ -23,7 +23,7 @@ export const MenuMobile = ({ location }) => {
   }
   return (
     <>
-      <div className="menu-bar fixed bg-darkBlack top-0 w-full flex justify-between items-center py-6 px-5">
+      <div className="z-10 menu-bar fixed bg-darkBlack top-0 w-full flex justify-between items-center py-6 px-5">
         <Link to="/">
           {location.pathname === "/" ? <LogoMobileGreen /> : <LogoMobile />}
         </Link>
