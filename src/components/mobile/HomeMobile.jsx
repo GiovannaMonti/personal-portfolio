@@ -107,7 +107,7 @@ export const HomeMobile = () => {
             <h2
               className="title flex gap-x-3 items-center text-title4"
               onClick={() => {
-                window.location = "/projects#mbloom"
+                window.location = "/projects#bloom"
               }}
             >
               <ArrowSlanted className="inline" />
