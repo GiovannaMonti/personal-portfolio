@@ -214,6 +214,7 @@ export const HomeDesktop = () => {
                 color="#4BFFB3"
               >
                 <img
+                  style={{ width: "100%" }}
                   className="p-2"
                   ref={scrollProjectsDescParent}
                   src="img/bloom-preview.png"
@@ -283,6 +284,7 @@ export const HomeDesktop = () => {
                 color="#4BFFB3"
               >
                 <img
+                  style={{ width: "100%" }}
                   className="p-2"
                   src="img/maison-compressed-preview.png"
                   alt="maison du silence website"
