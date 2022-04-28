@@ -1,4 +1,6 @@
 import React from "react"
+import { RoughNotation } from "react-rough-notation"
+
 import { ReactComponent as ArrowSlanted } from "../../assets/arrow-slanted.svg"
 import { goToProject } from "../../utils/routingUtils"
 
@@ -22,7 +24,18 @@ export const ListItemMobile = ({
           }}
         >
           <ArrowSlanted className="inline" />
-          {title} | {year}
+          <RoughNotation
+            className="font-display mb-2"
+            type="underline"
+            padding={0}
+            show={true}
+            strokeWidth={3}
+            iterations={2}
+            color="#4BFFB3"
+            animationDuration={300}
+          >
+            {title} | {year}
+          </RoughNotation>
         </h2>
       ) : (
         <h2 className="title flex gap-x-3 items-center text-title4">{title}</h2>

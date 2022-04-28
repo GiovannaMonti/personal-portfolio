@@ -83,10 +83,19 @@ export const SingleProjectDesktop = ({
                   href={project.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-pMd py-2 flex gap-x-2 items-center"
+                  className="text-pLg font-body py-2 flex gap-x-2 items-center"
                 >
                   <ArrowSlantedBig />
-                  {project.title}
+                  <RoughNotation
+                    type="underline"
+                    show={true}
+                    strokeWidth={3}
+                    iterations={2}
+                    color="#4BFFB3"
+                    animationDuration={300}
+                  >
+                    {project.title}
+                  </RoughNotation>
                 </a>
               </div>
             )}

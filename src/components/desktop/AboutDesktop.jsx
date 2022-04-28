@@ -48,8 +48,9 @@ export const AboutDesktop = () => {
 
           <a
             ref={(element) => scrollAbout.current.push(element)}
-            href="#"
+            href="pdf/CV.pdf"
             className="font-button text-linkSm flex items-center gap-x-2"
+            download={"Giovanna Monti CV - ENG"}
           >
             <DonwloadIcon />
             <RoughNotation

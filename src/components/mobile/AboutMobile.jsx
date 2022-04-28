@@ -20,7 +20,11 @@ export const AboutMobile = () => {
           your friendly neighbourhood Web Developer & Designer
         </p>
         <img src="img/giovanna-accurat-1.png" alt="portrait of me" />
-        <a href="#" className="font-button text-btnTextSm flex gap-x-2">
+        <a
+          href="pdf/CV.pdf"
+          className="font-button text-btnTextSm flex gap-x-2"
+          download={"Giovanna Monti CV - ENG"}
+        >
           <DonwloadIcon />
           <RoughNotation
             type="underline"
