@@ -66,7 +66,11 @@ export const MenuMobile = ({ location }) => {
         </div>
 
         <div className="menu-footer absolute bottom-0 left-0 w-full flex items-end justify-between pb-8 px-8">
-          <a href="#" className="font-button text-btnTextSm flex gap-x-2">
+          <a
+            href="pdf/CV.pdf"
+            className="font-button text-btnTextSm flex gap-x-2"
+            download={"Giovanna Monti CV - ENG"}
+          >
             <DonwloadIcon />
             download CV
           </a>
