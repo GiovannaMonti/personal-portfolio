@@ -3,12 +3,11 @@ import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Particles from "react-tsparticles"
 import { Link } from "react-router-dom"
-import { groupBy, reverse } from "lodash"
+import { groupBy, sortBy } from "lodash"
 import { RoughNotation } from "react-rough-notation"
 
 import { ReactComponent as ArrowDown } from "../../assets/arrow-down.svg"
 import { ReactComponent as ArrowSlantedBig } from "../../assets/arrow-slanted-big.svg"
-import { ReactComponent as Dot } from "../../assets/dot.svg"
 import { FooterDesktop } from "./FooterDesktop"
 
 import { SCROLL_SOFT_SKILLS } from "../../constants/helper"
@@ -38,7 +37,9 @@ export const HomeDesktop = () => {
   const scrollAbout = useRef([])
   const scrollAboutParent = useRef()
 
-  const skillsGroupedByLevel = reverse(Object.values(groupBy(skills, "level")))
+  const skillsGroupedByType = sortBy(Object.values(groupBy(skills, "type")), [
+    "order",
+  ])
 
   useEffect(() => {
     gsap.from(mainTitle.current, {
@@ -338,68 +339,30 @@ export const HomeDesktop = () => {
         </section>
 
         <section className="hard-skills flex flex-col px-16 py-12">
-          <h3 className="font-display text-title4 self-center text-fluoGreen">
+          <h3
+            ref={scrollHardSkillsParent}
+            className="font-display text-title4 self-center text-fluoGreen"
+          >
             Hard Skills
           </h3>
 
-          <div className="legend py-10 self-end" ref={scrollHardSkillsParent}>
-            <div className="flex gap-x-5 items-center justify-end">
-              <div className="flex gap-x-2">
-                {[...Array(4)].map((dot, index) => (
-                  <Dot key={index} />
-                ))}
-              </div>
-              <p className="text-pSm">Advanced knowledge</p>
-            </div>
-
-            <div className="flex gap-x-5 items-center justify-end">
-              <div className="flex gap-x-2">
-                {[...Array(3)].map((dot, index) => (
-                  <Dot key={index} />
-                ))}
-              </div>
-              <p className="text-pSm">Good knowledge</p>
-            </div>
-
-            <div className="flex gap-x-5 items-center justify-end">
-              <div className="flex gap-x-2">
-                {[...Array(2)].map((dot, index) => (
-                  <Dot key={index} />
-                ))}
-              </div>
-              <p className="text-pSm">Base knowledge</p>
-            </div>
-
-            <div className="flex gap-x-5 items-center justify-end">
-              <div className="flex gap-x-2">
-                {[...Array(1)].map((dot, index) => (
-                  <Dot key={index} />
-                ))}
-              </div>
-              <p className="text-pSm">Limited knowledge</p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-four gap-x-12">
-            {skillsGroupedByLevel.map((skillGroup) => {
+          <div className="grid grid-cols-three gap-x-12">
+            {skillsGroupedByType.map((skillGroup) => {
               return (
-                <div key={skillGroup.name}>
+                <div key={skillGroup[0].name}>
+                  <h3 className="font-display text-title6 text-fluoGreen pt-8 pb-6">
+                    {skillGroup[0].type}
+                  </h3>
                   {skillGroup.map((skill) => {
-                    const level = skill.level
                     const getRef = (element) =>
                       scrollHardSkills.current.push(element)
                     return (
-                      <div ref={getRef}>
+                      <div key={skill.name} ref={getRef}>
                         <div
                           key={skill.name}
                           className="skill flex justify-between items-center"
                         >
                           <p className="text-pLg">{skill.name}</p>
-                          <div className="flex gap-x-2">
-                            {[...Array(level)].map((dot, index) => (
-                              <Dot key={`${skill.name}${index}`} />
-                            ))}
-                          </div>
                         </div>
                         <div
                           className="separator w-full mb-3 mt-3"

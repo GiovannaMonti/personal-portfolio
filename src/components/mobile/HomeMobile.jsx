@@ -7,7 +7,6 @@ import { Link } from "react-router-dom"
 
 import { ReactComponent as ArrowDown } from "../../assets/arrow-down.svg"
 import { ReactComponent as ArrowSlanted } from "../../assets/arrow-slanted.svg"
-import { ReactComponent as Dot } from "../../assets/dot.svg"
 import { FooterMobile } from "./FooterMobile"
 
 import { SCROLL_SOFT_SKILLS } from "../../constants/helper"
@@ -160,47 +159,7 @@ export const HomeMobile = () => {
           Hard Skills
         </h3>
 
-        <div className="legend py-10">
-          <div className="flex gap-x-5 items-center">
-            <div className="flex gap-x-2">
-              {[...Array(4)].map((dot, index) => (
-                <Dot key={"adv" + index} />
-              ))}
-            </div>
-            <p className="text-pSm">Advanced knowledge</p>
-          </div>
-
-          <div className="flex gap-x-5 items-center">
-            <div className="flex gap-x-2">
-              {[...Array(3)].map((dot, index) => (
-                <Dot key={"good" + index} />
-              ))}
-            </div>
-            <p className="text-pSm">Good knowledge</p>
-          </div>
-
-          <div className="flex gap-x-5 items-center">
-            <div className="flex gap-x-2">
-              {[...Array(2)].map((dot, index) => (
-                <Dot key={"base" + index} />
-              ))}
-            </div>
-            <p className="text-pSm">Base knowledge</p>
-          </div>
-
-          <div className="flex gap-x-5 items-center">
-            <div className="flex gap-x-2">
-              {[...Array(1)].map((dot, index) => (
-                <Dot key={"lim" + index} />
-              ))}
-            </div>
-            <p className="text-pSm">Limited knowledge</p>
-          </div>
-        </div>
-
         {skills.map((skill) => {
-          const level = skill.level
-
           return (
             <>
               <div
@@ -208,11 +167,6 @@ export const HomeMobile = () => {
                 className="skill flex justify-between items-center"
               >
                 <p className="text-pMd">{skill.name}</p>
-                <div className="flex gap-x-2">
-                  {[...Array(level)].map((dot, index) => (
-                    <Dot key={`${skill.name}${index}`} />
-                  ))}
-                </div>
               </div>
               <div
                 className="separator w-full mb-3 mt-3"
