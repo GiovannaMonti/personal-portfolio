@@ -435,16 +435,11 @@ export const HomeDesktop = () => {
                 style={{ width: "55%" }}
               >
                 <p>
-                  Hi, I'm Giovanna, a creative Developer and Designer. <br />{" "}
-                  Empathetic, straightforward and assertive, I'm a grounded
-                  perfectionist, always in search of the right balance between
-                  feasibility and elegance.
-                </p>
-                <p>
-                  I'm interested in all areas of web and app development (I like
-                  learning new stuff!), but my favourite projects are the ones
-                  that aim for a combination of both functionality and
-                  aesthetics.
+                  Hi, I'm Giovanna, your friendly neighbourhood Full-Stack
+                  Developer. <br /> Proactive and precise, I quickly become
+                  passionate about the new challenges and subjects I encounter.
+                  I enjoy any activity involving food-tasting, and I
+                  occasionally speak at conferences.
                 </p>
 
                 <div
