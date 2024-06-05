@@ -129,29 +129,31 @@ export const HomeDesktop = () => {
           className="welcome-section flex flex-col justify-around px-16 z-100"
           style={{ height: "calc(100vh - 114.5px)", marginTop: "114.5px" }}
         >
-          <div className="welcome-text" ref={mainTitle}>
+          <div className="welcome-text flex flex-col gap-10" ref={mainTitle}>
             <h1 className="text-titleHugeDesktop leading-tight px-10">
-              <RoughNotation
-                type="crossed-off"
-                show={hoveredTextId === "creative"}
-                strokeWidth={4}
-                iterations={3}
-                color="#ffffff"
-                animationDuration={500}
-              >
-                <span
-                  className="text-fluoGreen font-display"
-                  onMouseOver={() => {
-                    setHoveredTextId("creative")
-                  }}
-                  onMouseOut={() => {
-                    setHoveredTextId(null)
-                  }}
+              <div>
+                <RoughNotation
+                  type="box"
+                  show={hoveredTextId === "giovanna-monti"}
+                  strokeWidth={4}
+                  iterations={1}
+                  color="#ffffff"
+                  animationDuration={500}
                 >
-                  Creative
-                </span>
-              </RoughNotation>{" "}
-              Front-End{" "}
+                  <span
+                    className="text-fluoGreen font-display"
+                    onMouseOver={() => {
+                      setHoveredTextId("giovanna-monti")
+                    }}
+                    onMouseOut={() => {
+                      setHoveredTextId(null)
+                    }}
+                  >
+                    Giovanna Monti
+                  </span>
+                </RoughNotation>
+              </div>
+              {"Full-Stack "}
               <RoughNotation
                 type="highlight"
                 show={hoveredTextId === "developer"}
@@ -173,8 +175,7 @@ export const HomeDesktop = () => {
                 >
                   Developer
                 </span>
-              </RoughNotation>{" "}
-              & Designer
+              </RoughNotation>
             </h1>
           </div>
 
@@ -196,7 +197,7 @@ export const HomeDesktop = () => {
               writingMode: "vertical-lr",
             }}
           >
-            Projects
+            School Projects
           </h3>
 
           <div className="overflow-hidden">
@@ -205,7 +206,7 @@ export const HomeDesktop = () => {
               className="project-teaser py-10 flex gap-x-14 items-center"
             >
               <RoughNotation
-                style={{ width: "40%" }}
+                style={{ maxWidth: "40%", minWidth: "40%" }}
                 className="justify-self-center ml-5"
                 type="box"
                 show={true}
@@ -217,7 +218,7 @@ export const HomeDesktop = () => {
                   style={{ width: "100%" }}
                   className="p-2"
                   ref={scrollProjectsDescParent}
-                  src="img/bloom-preview.png"
+                  src="img/ape-saronno.png"
                   alt="bloom app"
                 />
               </RoughNotation>
@@ -229,24 +230,24 @@ export const HomeDesktop = () => {
                 <h2
                   className="title flex gap-x-3 items-center text-title2 cursor-pointer"
                   onClick={() => {
-                    window.location = "/projects#bloom"
+                    window.location = "/projects#ape-saronno"
                   }}
                   onMouseOver={() => {
-                    setHoveredTextId("bloom")
+                    setHoveredTextId("ape-saronno")
                   }}
                   onMouseOut={() => {
                     setHoveredTextId(null)
                   }}
                 >
                   <ArrowSlantedBig className="inline" />
-                  Bloom App | 2022
+                  A. P. E. Saronno | 2022
                 </h2>
 
                 <RoughNotation
                   style={{ minWidth: "40%" }}
                   type="highlight"
                   multiline={true}
-                  show={hoveredTextId === "bloom"}
+                  show={hoveredTextId === "ape-saronno"}
                   strokeWidth={4}
                   iterations={1}
                   color="#4BFFB3"
@@ -255,10 +256,12 @@ export const HomeDesktop = () => {
                   <span
                     className="description text-pLg"
                     style={
-                      hoveredTextId === "bloom" ? { color: "#000000" } : null
+                      hoveredTextId === "ape-saronno"
+                        ? { color: "#000000" }
+                        : null
                     }
                   >
-                    Condominium management app UI/UX design.
+                    Design and development of a website for a local association.
                   </span>
                 </RoughNotation>
               </div>
@@ -275,7 +278,7 @@ export const HomeDesktop = () => {
               className="project-teaser py-10 flex gap-x-14 items-center"
             >
               <RoughNotation
-                style={{ minWidth: "40%" }}
+                style={{ maxWidth: "40%", minWidth: "40%" }}
                 className="justify-self-center ml-5"
                 type="box"
                 show={true}

@@ -8,11 +8,13 @@ import { ListItemDesktop } from "./ListItemDesktop"
 import { SingleProjectDesktop } from "./SingleProjectDesktop"
 
 import projects from "../../data/projects.json"
+console.log("projects: ", projects)
 
 export const ProjectsDesktop = () => {
   const [filteredProjects, setFilteredProjects] = useState(projects)
   const [isActiveTab, setIsActiveTab] = useState("all")
   const [selectedProject, setSelectedProject] = useState(window.location.hash)
+  console.log("selectedProject: ", selectedProject)
 
   gsap.registerPlugin(ScrollTrigger)
 

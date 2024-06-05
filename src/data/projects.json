@@ -1,5 +1,19 @@
 [
     {
+        "title": "Associazione Proprietà Edilizia",
+        "slug": "ape-saronno",
+        "subtitle": "Design & Development",
+        "description": "Redesign and development of a local association's website.",
+        "longDescription": "Redesign and development of the website for an association dedicated to the defense of local homeowners. Based on NextJS and headless Wordpress.",
+        "category": ["design", "development"],
+        "year": 2022,
+        "src": "ape-saronno.png",
+        "alt": "ape saronno",
+        "link": "https://www.apesaronno.it/",
+        "tools": "Figma, NextJS, WP API, Vercel",
+        "team": "Giovanna Monti"
+    },
+    {
         "title": "Antonio Testa",
         "slug": "antonio-testa",
         "subtitle": "Development",

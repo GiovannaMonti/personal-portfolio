@@ -55,17 +55,21 @@ export const HomeMobile = () => {
       >
         <div className="welcome-text flex flex-col gap-y-6">
           <h1 className="text-title1 pt-24">
-            <RoughNotation
-              type="underline"
-              show={true}
-              strokeWidth={4}
-              iterations={2}
-              color="#4BFFB3"
-              animationDuration={300}
-            >
-              <span className="text-fluoGreen font-display">Creative</span>{" "}
-            </RoughNotation>
-            Front-End{" "}
+            <div>
+              <RoughNotation
+                type="underline"
+                show={true}
+                strokeWidth={4}
+                iterations={2}
+                color="#4BFFB3"
+                animationDuration={300}
+              >
+                <span className="text-fluoGreen font-display">
+                  Giovanna Monti
+                </span>{" "}
+              </RoughNotation>
+            </div>
+            Full-Stack{" "}
             <RoughNotation
               type="underline"
               show={true}
@@ -76,7 +80,6 @@ export const HomeMobile = () => {
             >
               <span className="text-fluoGreen font-display">Developer</span>{" "}
             </RoughNotation>
-            & Designer
           </h1>
         </div>
 
@@ -100,7 +103,7 @@ export const HomeMobile = () => {
             iterations={3}
             color="#4BFFB3"
           >
-            <img src="img/bloom-preview.png" alt="bloom app" />
+            <img src="img/ape-saronno.png" alt="ape saronno" />
           </RoughNotation>
 
           <div className="project-details">
@@ -111,10 +114,10 @@ export const HomeMobile = () => {
               }}
             >
               <ArrowSlanted className="inline" />
-              Bloom App | 2022
+              Associazione Proprietà Edilizia | 2022
             </h2>
             <p className="description text-pSm">
-              Condominium management app UI/UX design.
+              Design and development of a website for a local association.
             </p>
           </div>
         </div>
