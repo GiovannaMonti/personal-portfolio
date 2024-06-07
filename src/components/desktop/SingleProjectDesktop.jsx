@@ -17,6 +17,7 @@ export const SingleProjectDesktop = ({
   const project = projects.find(
     (p) => p.slug === selectedProject.replace(/#(?=\S)/g, "")
   )
+  console.log("project: ", project)
 
   gsap.registerPlugin(ScrollTrigger)
 

@@ -3,12 +3,11 @@ import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Particles from "react-tsparticles"
 import { Link } from "react-router-dom"
-import { groupBy, reverse } from "lodash"
+import { groupBy, sortBy } from "lodash"
 import { RoughNotation } from "react-rough-notation"
 
 import { ReactComponent as ArrowDown } from "../../assets/arrow-down.svg"
 import { ReactComponent as ArrowSlantedBig } from "../../assets/arrow-slanted-big.svg"
-import { ReactComponent as Dot } from "../../assets/dot.svg"
 import { FooterDesktop } from "./FooterDesktop"
 
 import { SCROLL_SOFT_SKILLS } from "../../constants/helper"
@@ -38,7 +37,9 @@ export const HomeDesktop = () => {
   const scrollAbout = useRef([])
   const scrollAboutParent = useRef()
 
-  const skillsGroupedByLevel = reverse(Object.values(groupBy(skills, "level")))
+  const skillsGroupedByType = sortBy(Object.values(groupBy(skills, "type")), [
+    "order",
+  ])
 
   useEffect(() => {
     gsap.from(mainTitle.current, {
@@ -129,29 +130,31 @@ export const HomeDesktop = () => {
           className="welcome-section flex flex-col justify-around px-16 z-100"
           style={{ height: "calc(100vh - 114.5px)", marginTop: "114.5px" }}
         >
-          <div className="welcome-text" ref={mainTitle}>
+          <div className="welcome-text flex flex-col gap-10" ref={mainTitle}>
             <h1 className="text-titleHugeDesktop leading-tight px-10">
-              <RoughNotation
-                type="crossed-off"
-                show={hoveredTextId === "creative"}
-                strokeWidth={4}
-                iterations={3}
-                color="#ffffff"
-                animationDuration={500}
-              >
-                <span
-                  className="text-fluoGreen font-display"
-                  onMouseOver={() => {
-                    setHoveredTextId("creative")
-                  }}
-                  onMouseOut={() => {
-                    setHoveredTextId(null)
-                  }}
+              <div>
+                <RoughNotation
+                  type="box"
+                  show={hoveredTextId === "giovanna-monti"}
+                  strokeWidth={4}
+                  iterations={1}
+                  color="#ffffff"
+                  animationDuration={500}
                 >
-                  Creative
-                </span>
-              </RoughNotation>{" "}
-              Front-End{" "}
+                  <span
+                    className="text-fluoGreen font-display"
+                    onMouseOver={() => {
+                      setHoveredTextId("giovanna-monti")
+                    }}
+                    onMouseOut={() => {
+                      setHoveredTextId(null)
+                    }}
+                  >
+                    Giovanna Monti
+                  </span>
+                </RoughNotation>
+              </div>
+              {"Full-Stack "}
               <RoughNotation
                 type="highlight"
                 show={hoveredTextId === "developer"}
@@ -173,8 +176,7 @@ export const HomeDesktop = () => {
                 >
                   Developer
                 </span>
-              </RoughNotation>{" "}
-              & Designer
+              </RoughNotation>
             </h1>
           </div>
 
@@ -196,7 +198,7 @@ export const HomeDesktop = () => {
               writingMode: "vertical-lr",
             }}
           >
-            Projects
+            School Projects
           </h3>
 
           <div className="overflow-hidden">
@@ -205,7 +207,7 @@ export const HomeDesktop = () => {
               className="project-teaser py-10 flex gap-x-14 items-center"
             >
               <RoughNotation
-                style={{ width: "40%" }}
+                style={{ maxWidth: "40%", minWidth: "40%" }}
                 className="justify-self-center ml-5"
                 type="box"
                 show={true}
@@ -217,7 +219,7 @@ export const HomeDesktop = () => {
                   style={{ width: "100%" }}
                   className="p-2"
                   ref={scrollProjectsDescParent}
-                  src="img/bloom-preview.png"
+                  src="img/ape-saronno.png"
                   alt="bloom app"
                 />
               </RoughNotation>
@@ -229,24 +231,24 @@ export const HomeDesktop = () => {
                 <h2
                   className="title flex gap-x-3 items-center text-title2 cursor-pointer"
                   onClick={() => {
-                    window.location = "/projects#bloom"
+                    window.location = "/projects#ape-saronno"
                   }}
                   onMouseOver={() => {
-                    setHoveredTextId("bloom")
+                    setHoveredTextId("ape-saronno")
                   }}
                   onMouseOut={() => {
                     setHoveredTextId(null)
                   }}
                 >
                   <ArrowSlantedBig className="inline" />
-                  Bloom App | 2022
+                  A. P. E. Saronno | 2022
                 </h2>
 
                 <RoughNotation
                   style={{ minWidth: "40%" }}
                   type="highlight"
                   multiline={true}
-                  show={hoveredTextId === "bloom"}
+                  show={hoveredTextId === "ape-saronno"}
                   strokeWidth={4}
                   iterations={1}
                   color="#4BFFB3"
@@ -255,10 +257,12 @@ export const HomeDesktop = () => {
                   <span
                     className="description text-pLg"
                     style={
-                      hoveredTextId === "bloom" ? { color: "#000000" } : null
+                      hoveredTextId === "ape-saronno"
+                        ? { color: "#000000" }
+                        : null
                     }
                   >
-                    Condominium management app UI/UX design.
+                    Design and development of a website for a local association.
                   </span>
                 </RoughNotation>
               </div>
@@ -275,7 +279,7 @@ export const HomeDesktop = () => {
               className="project-teaser py-10 flex gap-x-14 items-center"
             >
               <RoughNotation
-                style={{ minWidth: "40%" }}
+                style={{ maxWidth: "40%", minWidth: "40%" }}
                 className="justify-self-center ml-5"
                 type="box"
                 show={true}
@@ -335,68 +339,30 @@ export const HomeDesktop = () => {
         </section>
 
         <section className="hard-skills flex flex-col px-16 py-12">
-          <h3 className="font-display text-title4 self-center text-fluoGreen">
+          <h3
+            ref={scrollHardSkillsParent}
+            className="font-display text-title4 self-center text-fluoGreen"
+          >
             Hard Skills
           </h3>
 
-          <div className="legend py-10 self-end" ref={scrollHardSkillsParent}>
-            <div className="flex gap-x-5 items-center justify-end">
-              <div className="flex gap-x-2">
-                {[...Array(4)].map((dot, index) => (
-                  <Dot key={index} />
-                ))}
-              </div>
-              <p className="text-pSm">Advanced knowledge</p>
-            </div>
-
-            <div className="flex gap-x-5 items-center justify-end">
-              <div className="flex gap-x-2">
-                {[...Array(3)].map((dot, index) => (
-                  <Dot key={index} />
-                ))}
-              </div>
-              <p className="text-pSm">Good knowledge</p>
-            </div>
-
-            <div className="flex gap-x-5 items-center justify-end">
-              <div className="flex gap-x-2">
-                {[...Array(2)].map((dot, index) => (
-                  <Dot key={index} />
-                ))}
-              </div>
-              <p className="text-pSm">Base knowledge</p>
-            </div>
-
-            <div className="flex gap-x-5 items-center justify-end">
-              <div className="flex gap-x-2">
-                {[...Array(1)].map((dot, index) => (
-                  <Dot key={index} />
-                ))}
-              </div>
-              <p className="text-pSm">Limited knowledge</p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-four gap-x-12">
-            {skillsGroupedByLevel.map((skillGroup) => {
+          <div className="grid grid-cols-three gap-x-12">
+            {skillsGroupedByType.map((skillGroup) => {
               return (
-                <div key={skillGroup.name}>
+                <div key={skillGroup[0].name}>
+                  <h3 className="font-display text-title6 text-fluoGreen pt-8 pb-6">
+                    {skillGroup[0].type}
+                  </h3>
                   {skillGroup.map((skill) => {
-                    const level = skill.level
                     const getRef = (element) =>
                       scrollHardSkills.current.push(element)
                     return (
-                      <div ref={getRef}>
+                      <div key={skill.name} ref={getRef}>
                         <div
                           key={skill.name}
                           className="skill flex justify-between items-center"
                         >
                           <p className="text-pLg">{skill.name}</p>
-                          <div className="flex gap-x-2">
-                            {[...Array(level)].map((dot, index) => (
-                              <Dot key={`${skill.name}${index}`} />
-                            ))}
-                          </div>
                         </div>
                         <div
                           className="separator w-full mb-3 mt-3"
@@ -469,16 +435,11 @@ export const HomeDesktop = () => {
                 style={{ width: "55%" }}
               >
                 <p>
-                  Hi, I'm Giovanna, a creative Developer and Designer. <br />{" "}
-                  Empathetic, straightforward and assertive, I'm a grounded
-                  perfectionist, always in search of the right balance between
-                  feasibility and elegance.
-                </p>
-                <p>
-                  I'm interested in all areas of web and app development (I like
-                  learning new stuff!), but my favourite projects are the ones
-                  that aim for a combination of both functionality and
-                  aesthetics.
+                  Hi, I'm Giovanna, your friendly neighbourhood Web
+                  Developer. <br /> Proactive and precise, I quickly become
+                  passionate about the new challenges and subjects I encounter.
+                  I enjoy any activity involving food-tasting, and I
+                  occasionally speak at conferences.
                 </p>
 
                 <div

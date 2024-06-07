@@ -33,7 +33,7 @@ export const AboutDesktop = () => {
           Hi! I'm <span className="text-fluoGreen font-display">Giovanna</span>
         </h1>
         <p className="text-pLg">
-          your friendly neighbourhood Web Developer & Designer
+          your friendly neighbourhood Web Developer
         </p>
       </section>
 
@@ -41,7 +41,7 @@ export const AboutDesktop = () => {
         <div className="photo flex flex-col gap-y-6 text-pLg">
           <img
             ref={(element) => scrollAbout.current.push(element)}
-            src="img/giovanna-accurat-1.png"
+            src="img/giovanna-monti-speaker-square.jpg"
             alt="portrait of me"
             className="min-w-[35vw]"
           />
@@ -81,12 +81,12 @@ export const AboutDesktop = () => {
               About me
             </h3>
             <p className="text-pLg py-2">
-              I'm Giovanna, class 1998, and I'm a creative Developer and
-              Designer.
+              I'm Giovanna, class 1998, and I'm a Full-Stack Developer with a
+              soft spot for Front-End.
             </p>
             <p className="text-pLg py-2">
-              I listen to weird music, I love pc gaming and I like facing every
-              challenge with enthusiasm and curiosity.
+              I listen to weird music (and occasionally dance to it), I love playing ping pong and I like facing every challenge with enthusiasm and
+              curiosity.
             </p>
             <p className="text-pLg py-2">
               My motto? Understand things, before you do them. And, in case of
@@ -121,7 +121,7 @@ export const AboutDesktop = () => {
               institute.
             </p>
             <p className="text-pLg py-2">
-              I'm currently working as a creative developer at{" "}
+              I've worked as a creative developer at{" "}
               <a
                 className="font-semibold text-fluoGreen"
                 href="https://accurat.it/"
@@ -130,14 +130,27 @@ export const AboutDesktop = () => {
               >
                 Accurat
               </a>
-              , a data-driven design and development agency based in Milan. Here
-              I'm constantly refining my development and teamwork skills, while
-              specializing in data-viz development.
+              , a data-driven design and development agency based in Milan.
+              Then, I joined the R&D area of{" "}
+              <a
+                className="font-semibold text-fluoGreen"
+                href="https://mia-platform.eu/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Mia-Platform
+              </a>
+              , developing features for Mia-Platform Console, an Internal
+              Developer Platform builder that improves DevX and simplifies
+              software development at scale.
             </p>
             <p className="text-pLg py-2">
-              My interests include all web development areas and aspects, but
-              I'm particularly fond of projects that aim for a combination of
-              both functionality and aesthetics.
+              I am passionate about Platform Engineering and the cloud-native
+              landscape. I love sharing thoughts and experiences with the tech
+              community, and that's why I started my speaker journey in 2023.
+              {<br />}I'm open to learning anything development-related, and I'm
+              particularly fond of projects with a special care for the user
+              interface.
             </p>
           </div>
 

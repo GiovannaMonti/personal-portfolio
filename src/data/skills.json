@@ -1,70 +1,72 @@
 [
   {
+    "name": "ReactJS",
+    "order": 0,
+    "type": "development"
+  },
+  {
+    "name": "JavaScript/TypeScript",
+    "order": 0,
+    "type": "development"
+  },
+  {
     "name": "HTML5",
-    "level": 4
+    "order": 0,
+    "type": "development"
   },
   {
     "name": "CSS3",
-    "level": 4
+    "order": 0,
+    "type": "development"
   },
   {
-    "name": "JavaScript",
-    "level": 4
+    "name": "Golang",
+    "order": 0,
+    "type": "development"
   },
   {
-    "name": "React",
-    "level": 4
+    "name": "Python",
+    "order": 0,
+    "type": "development"
   },
   {
-    "name": "Svelte",
-    "level": 4
+    "name": "React Testing Library",
+    "order": 1,
+    "type": "testing"
   },
   {
-    "name": "GIT",
-    "level": 3
+    "name": "Jest / Vitest",
+    "order": 1,
+    "type": "testing"
   },
   {
-    "name": "Wordpress",
-    "level": 3
+    "name": "Tap",
+    "order": 1,
+    "type": "testing"
+  },
+  {
+    "name": "Playwright",
+    "order": 1,
+    "type": "testing"
+  },
+  {
+    "name": "Git / Gitlab / GitHub",
+    "order": 2,
+    "type": "other"
+  },
+  {
+    "name": "antd",
+    "order": 2,
+    "type": "other"
   },
   {
     "name": "Figma",
-    "level": 3
+    "order": 2,
+    "type": "other"
   },
   {
-    "name": "d3.js",
-    "level": 2
-  },
-  {
-    "name": "Module bundlers",
-    "level": 2
-  },
-  {
-    "name": "Package managers",
-    "level": 2
-  },
-  {
-    "name": "Adobe Suite (Ai, Ps, Id)",
-    "level": 2
-  },
-  {
-    "name": "SQL, PostgreSQL, MySQL",
-    "level": 2
-  },
-  {
-    "name": "Java",
-    "level": 1
-  },
-  {
-    "name": "PHP",
-    "level": 1
-  },
-  {
-    "name": "GLSL",
-    "level": 1
-  },
-  {
-    "name": "Matlab, R",
-    "level": 1
+    "name": "Jira",
+    "order": 2,
+    "type": "other"
   }
 ]

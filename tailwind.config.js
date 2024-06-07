@@ -8,7 +8,7 @@ module.exports = {
       button: ["TTC-Demibold"],
     },
     fontSize: {
-      titleHugeDesktop: "100px",
+      titleHugeDesktop: "120px",
       titleHugeMobile: "64px",
       title1: "43px",
       title2: "36px",
@@ -35,7 +35,7 @@ module.exports = {
     gridTemplateColumns: {
       about: "120px 1fr",
       singleProject: "50% 45%",
-      four: "repeat(4, 1fr)",
+      three: "repeat(3, 1fr)",
     },
 
     keyframes: {

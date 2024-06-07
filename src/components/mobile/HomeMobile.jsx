@@ -7,7 +7,6 @@ import { Link } from "react-router-dom"
 
 import { ReactComponent as ArrowDown } from "../../assets/arrow-down.svg"
 import { ReactComponent as ArrowSlanted } from "../../assets/arrow-slanted.svg"
-import { ReactComponent as Dot } from "../../assets/dot.svg"
 import { FooterMobile } from "./FooterMobile"
 
 import { SCROLL_SOFT_SKILLS } from "../../constants/helper"
@@ -55,17 +54,21 @@ export const HomeMobile = () => {
       >
         <div className="welcome-text flex flex-col gap-y-6">
           <h1 className="text-title1 pt-24">
-            <RoughNotation
-              type="underline"
-              show={true}
-              strokeWidth={4}
-              iterations={2}
-              color="#4BFFB3"
-              animationDuration={300}
-            >
-              <span className="text-fluoGreen font-display">Creative</span>{" "}
-            </RoughNotation>
-            Front-End{" "}
+            <div>
+              <RoughNotation
+                type="underline"
+                show={true}
+                strokeWidth={4}
+                iterations={2}
+                color="#4BFFB3"
+                animationDuration={300}
+              >
+                <span className="text-fluoGreen font-display">
+                  Giovanna Monti
+                </span>{" "}
+              </RoughNotation>
+            </div>
+            Full-Stack{" "}
             <RoughNotation
               type="underline"
               show={true}
@@ -76,7 +79,6 @@ export const HomeMobile = () => {
             >
               <span className="text-fluoGreen font-display">Developer</span>{" "}
             </RoughNotation>
-            & Designer
           </h1>
         </div>
 
@@ -100,7 +102,7 @@ export const HomeMobile = () => {
             iterations={3}
             color="#4BFFB3"
           >
-            <img src="img/bloom-preview.png" alt="bloom app" />
+            <img src="img/ape-saronno.png" alt="ape saronno" />
           </RoughNotation>
 
           <div className="project-details">
@@ -111,10 +113,10 @@ export const HomeMobile = () => {
               }}
             >
               <ArrowSlanted className="inline" />
-              Bloom App | 2022
+              Associazione Proprietà Edilizia | 2022
             </h2>
             <p className="description text-pSm">
-              Condominium management app UI/UX design.
+              Design and development of a website for a local association.
             </p>
           </div>
         </div>
@@ -157,47 +159,7 @@ export const HomeMobile = () => {
           Hard Skills
         </h3>
 
-        <div className="legend py-10">
-          <div className="flex gap-x-5 items-center">
-            <div className="flex gap-x-2">
-              {[...Array(4)].map((dot, index) => (
-                <Dot key={"adv" + index} />
-              ))}
-            </div>
-            <p className="text-pSm">Advanced knowledge</p>
-          </div>
-
-          <div className="flex gap-x-5 items-center">
-            <div className="flex gap-x-2">
-              {[...Array(3)].map((dot, index) => (
-                <Dot key={"good" + index} />
-              ))}
-            </div>
-            <p className="text-pSm">Good knowledge</p>
-          </div>
-
-          <div className="flex gap-x-5 items-center">
-            <div className="flex gap-x-2">
-              {[...Array(2)].map((dot, index) => (
-                <Dot key={"base" + index} />
-              ))}
-            </div>
-            <p className="text-pSm">Base knowledge</p>
-          </div>
-
-          <div className="flex gap-x-5 items-center">
-            <div className="flex gap-x-2">
-              {[...Array(1)].map((dot, index) => (
-                <Dot key={"lim" + index} />
-              ))}
-            </div>
-            <p className="text-pSm">Limited knowledge</p>
-          </div>
-        </div>
-
         {skills.map((skill) => {
-          const level = skill.level
-
           return (
             <>
               <div
@@ -205,11 +167,6 @@ export const HomeMobile = () => {
                 className="skill flex justify-between items-center"
               >
                 <p className="text-pMd">{skill.name}</p>
-                <div className="flex gap-x-2">
-                  {[...Array(level)].map((dot, index) => (
-                    <Dot key={`${skill.name}${index}`} />
-                  ))}
-                </div>
               </div>
               <div
                 className="separator w-full mb-3 mt-3"
@@ -259,15 +216,10 @@ export const HomeMobile = () => {
           onMouseLeave={() => setIsHoveringImage(false)}
         />
         <p className="text-pMd">
-          Hi, I'm Giovanna, a creative Developer and Designer. <br />{" "}
-          Empathetic, straightforward and assertive, I'm a grounded
-          perfectionist, always in search of the right balance between
-          feasibility and elegance.
-        </p>
-        <p className="text-pMd">
-          I'm interested in all areas of web and app development (I like
-          learning new stuff!), but my favourite projects are the ones that aim
-          for a combination of both functionality and aesthetics.
+          Hi, I'm Giovanna, your friendly neighbourhood Web Developer.{" "}
+          <br /> Proactive and precise, I quickly become passionate about the
+          new challenges and subjects I encounter. I enjoy any activity
+          involving food-tasting, and I occasionally speak at conferences.
         </p>
         <div className="links flex flex-col gap-y-3">
           <span className="flex gap-x-3 items-center text-title4 font-display">

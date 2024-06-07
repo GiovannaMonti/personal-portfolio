@@ -31,7 +31,7 @@ export const FooterDesktop = () => {
         </a>
       </div>
       <span className="text-sm text-footerGrey flex gap-x-1 justify-end">
-        design & development by
+        designed & developed by
         <a
           className="text-fluoGreen font-button"
           href="https://www.linkedin.com/in/giovanna-monti-0637351a4/"
