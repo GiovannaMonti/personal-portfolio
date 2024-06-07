@@ -435,7 +435,7 @@ export const HomeDesktop = () => {
                 style={{ width: "55%" }}
               >
                 <p>
-                  Hi, I'm Giovanna, your friendly neighbourhood Full-Stack
+                  Hi, I'm Giovanna, your friendly neighbourhood Web
                   Developer. <br /> Proactive and precise, I quickly become
                   passionate about the new challenges and subjects I encounter.
                   I enjoy any activity involving food-tasting, and I

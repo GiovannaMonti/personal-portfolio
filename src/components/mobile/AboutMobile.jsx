@@ -17,9 +17,9 @@ export const AboutMobile = () => {
           Hi! I'm <span className="text-fluoGreen font-display">Giovanna</span>
         </h1>
         <p className="text-pMd">
-          your friendly neighbourhood Web Developer & Designer
+          your friendly neighbourhood Web Developer
         </p>
-        <img src="img/giovanna-accurat-1.png" alt="portrait of me" />
+        <img src="img/giovanna-monti-speaker-square.jpg" alt="portrait of me" />
         <a
           href="pdf/CV.pdf"
           className="font-button text-btnTextSm flex gap-x-2"

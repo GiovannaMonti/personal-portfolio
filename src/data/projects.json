@@ -14,18 +14,18 @@
         "team": "Giovanna Monti"
     },
     {
-        "title": "Antonio Testa",
-        "slug": "antonio-testa",
-        "subtitle": "Development",
-        "description": "Musician personal website.",
-        "longDescription": "Digital rebranding project for italian musician Antonio Testa. Development of a Wordpress custom theme based on an existing design.",
-        "category": ["development"],
-        "year": 2022,
-        "src": "antonio-testa.png",
-        "alt": "antonio testa",
-        "link": "",
-        "tools": "Wordpress",
-        "team": "Giovanna Monti, Victoria Ferrari, Luca Ricci"
+        "title": "Maison du Silence",
+        "slug": "maison-du-silence",
+        "subtitle": "Design & Development",
+        "description": "Design and development of a Wordpress custom theme for a holiday home website.",
+        "longDescription": "Ideation, design and development of 'Maison du Silence' custom theme and website. Creation of reusable ACF Blocks to allow the client to update it autonomously.",
+        "category": ["design", "development"],
+        "year": 2021,
+        "src": "maison-compressed-preview.png",
+        "alt": "maison du silence",
+        "link": "https://www.maisondusilence.chichomesitaly.com/",
+        "tools": "Figma, Wordpress",
+        "team": "Giovanna Monti"
     },
     {
         "title": "Bloom App",
@@ -42,6 +42,20 @@
         "team": "Giovanna Monti, Isabella Bagnulo"
     },
     {
+        "title": "Antonio Testa",
+        "slug": "antonio-testa",
+        "subtitle": "Development",
+        "description": "Musician personal website.",
+        "longDescription": "Digital rebranding project for italian musician Antonio Testa. Development of a Wordpress custom theme based on an existing design.",
+        "category": ["development"],
+        "year": 2022,
+        "src": "antonio-testa.png",
+        "alt": "antonio testa",
+        "link": "",
+        "tools": "Wordpress",
+        "team": "Giovanna Monti, Victoria Ferrari, Luca Ricci"
+    },
+    {
         "title": "Mousse",
         "slug": "mousse",
         "subtitle": "Design & Development",
@@ -52,20 +66,6 @@
         "src": "mousse.png",
         "alt": "mousse",
         "link": "",
-        "tools": "Figma, Wordpress",
-        "team": "Giovanna Monti"
-    },
-    {
-        "title": "Maison du Silence",
-        "slug": "maison-du-silence",
-        "subtitle": "Design & Development",
-        "description": "Design and development of a Wordpress custom theme for a holiday home website.",
-        "longDescription": "Ideation, design and development of 'Maison du Silence' custom theme and website. Creation of reusable ACF Blocks to allow the client to update it autonomously.",
-        "category": ["design", "development"],
-        "year": 2021,
-        "src": "maison-compressed-preview.png",
-        "alt": "maison du silence",
-        "link": "https://www.maisondusilence.chichomesitaly.com/",
         "tools": "Figma, Wordpress",
         "team": "Giovanna Monti"
     }

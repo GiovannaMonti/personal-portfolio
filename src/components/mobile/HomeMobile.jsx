@@ -216,7 +216,7 @@ export const HomeMobile = () => {
           onMouseLeave={() => setIsHoveringImage(false)}
         />
         <p className="text-pMd">
-          Hi, I'm Giovanna, your friendly neighbourhood Full-Stack Developer.{" "}
+          Hi, I'm Giovanna, your friendly neighbourhood Web Developer.{" "}
           <br /> Proactive and precise, I quickly become passionate about the
           new challenges and subjects I encounter. I enjoy any activity
           involving food-tasting, and I occasionally speak at conferences.

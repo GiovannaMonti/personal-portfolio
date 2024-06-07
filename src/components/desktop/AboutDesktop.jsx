@@ -33,7 +33,7 @@ export const AboutDesktop = () => {
           Hi! I'm <span className="text-fluoGreen font-display">Giovanna</span>
         </h1>
         <p className="text-pLg">
-          your friendly neighbourhood Web Developer & Designer
+          your friendly neighbourhood Web Developer
         </p>
       </section>
 
@@ -41,7 +41,7 @@ export const AboutDesktop = () => {
         <div className="photo flex flex-col gap-y-6 text-pLg">
           <img
             ref={(element) => scrollAbout.current.push(element)}
-            src="img/giovanna-accurat-1.png"
+            src="img/giovanna-monti-speaker-square.jpg"
             alt="portrait of me"
             className="min-w-[35vw]"
           />

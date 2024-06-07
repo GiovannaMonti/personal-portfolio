@@ -35,7 +35,7 @@
     "type": "testing"
   },
   {
-    "name": "Jest/Vitest",
+    "name": "Jest / Vitest",
     "order": 1,
     "type": "testing"
   },
@@ -50,7 +50,12 @@
     "type": "testing"
   },
   {
-    "name": "GIT",
+    "name": "Git / Gitlab / GitHub",
+    "order": 2,
+    "type": "other"
+  },
+  {
+    "name": "antd",
     "order": 2,
     "type": "other"
   },
