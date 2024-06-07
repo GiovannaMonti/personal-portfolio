@@ -47,8 +47,7 @@ export const AboutMobile = () => {
             spot for Front-End.
           </p>
           <p className="text-pMd py-2">
-            I listen to weird music (and occasionally dance to it), I love pc
-            gaming and I like facing every challenge with enthusiasm and
+            I listen to weird music (and occasionally dance to it), I love playing ping pong and I like facing every challenge with enthusiasm and
             curiosity.
           </p>
           <p className="text-pMd py-2">
