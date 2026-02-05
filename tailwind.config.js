@@ -4,8 +4,8 @@ module.exports = {
     extend: {},
     fontFamily: {
       display: ["GopherDisplay-Medium"],
-      body: ["TTC"],
-      button: ["TTC-Demibold"],
+      body: ["DM Sans", "sans-serif"],
+      button: ["DM Sans", "sans-serif"],
     },
     fontSize: {
       titleHugeDesktop: "120px",
@@ -21,9 +21,9 @@ module.exports = {
       altTitle4: "32px",
       btnTextMd: "22px",
       btnTextSm: "18px",
-      pLg: "26px",
-      pMd: "22px",
-      pSm: "18px",
+      pLg: "24px",
+      pMd: "20px",
+      pSm: "16px",
       linkMd: "30px",
     },
     colors: {
@@ -68,4 +68,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};
